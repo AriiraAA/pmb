@@ -37,7 +37,7 @@
 		while ($row = mysqli_fetch_array($query)) {
 			$data []= $row;
 		}
-	}
+	} 
 	echo json_encode($data);
 	unset($_SESSION['fakultas']);
 ?>

@@ -26,13 +26,18 @@
 		$fakultas = "Dak tau hehe";
 	}
 
-	$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='".$fakultas."'");
+	if (isset($_SESSION['fakultas'], $_SESSION['jurusan'])) {
+		$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='".$fakultas."' AND jurusan='".$_SESSION['jurusan']."'");
+	} else {
+		$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='".$fakultas."'");
+	}
 	$data = array();
 	if (mysqli_num_rows($query) > 0) {
 		while ($row = mysqli_fetch_array($query)) {
 			$data []= $row;
 		}
-	}
+	} 
 	echo json_encode($data);
 	unset($_SESSION['fakultas']);
+	unset($_SESSION['jurusan']);
 ?>

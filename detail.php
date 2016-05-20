@@ -32,26 +32,12 @@
 	}
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Detail</title>
-	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-	<script src="semantic/semantic.min.js"></script>
-	<link rel="shortcut icon" href="http://bem.ilkom.unsri.ac.id/wp-content/uploads/2015/04/favicon-1.png">
-</head>
+<?php include "template/header.php"; ?>
+
 <body>
-	<div class="ui large top fixed hidden menu">
-	  <div class="ui container">
-	  	<h3 class="item">BEM KM Fasilkom Unsri</h3>
-	    <div class="right menu">
-	      	<a class="item" href="http://bem.ilkom.unsri.ac.id">Beranda</a>
-		    <a class="item" href="#">Karya Ilkom</a>
-		    <a class="item" href="#">Mahasiswa Berprestasi</a>
-	    </div>
-	  </div>
-	</div>
+	
+	<?php include "template/navbar.php"; ?>
+
 	<center style="margin-top: 6%">
 		<h1>Data Mahasiswa Baru Universitas Sriwijaya</h1>
 	</center>
