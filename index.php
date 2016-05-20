@@ -239,10 +239,10 @@
 						<h4 style="font-size: 17px;">BEM KM Fakultas</br> Matematika dan Ilmu Pengetahuan Alam</h4>
 					</div>	
 				</a>
-				<a href="">
+				<a href="http://bem.ilkom.unsri.ac.id">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg" class="logo_img"/>
+							<img src="http://bem.ilkom.unsri.ac.id/a/assets/img/logobem.png" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Ilmu Komputer</h4>
 					</div>	
