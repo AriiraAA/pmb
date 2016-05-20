@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script type="text/javascript" src="inc/TimeCircles.js"></script>
     <link rel="stylesheet" href="inc/TimeCircles.css" />
+    <link rel="shortcut icon" href="logo/unsri.jpg">
 	<style type="text/css">
 		.bemu{
 			border: 2px solid black;
