@@ -159,7 +159,7 @@
 			
 		</div>
 		<div class="four wide column">
-			<a class="ui button" href="index.php">Back</a>	
+			<a class="ui button" href="data.php?fakultas=<?= $fakultas ?>">Back</a>	
 		</div>
 	</div>
 </body>
