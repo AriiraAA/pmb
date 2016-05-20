@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Penerimaan Mahasiswa Baru 2016 Universitas Sriwijaya</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.css">
 	<script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -91,6 +91,11 @@
 			background-size: cover;
 			margin-top: -2%;
 		}
+
+		.logo_img {
+			width: 100%;
+			height: 100%;
+		}
 	</style>
 </head>
 <body>
@@ -144,7 +149,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Ekonomi</h4>
 					</div>	
@@ -152,7 +157,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Hukum</h4>
 					</div>	
@@ -160,7 +165,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Teknik</h4>
 					</div>	
@@ -168,7 +173,7 @@
 				<a href="www.fkunsribem.wix.com/fkunsribem ">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/fk.jpg" width:100 height:100 />
+							<img src="logo/fk.jpg" class="logo_img" />
 						</div>	
 						<h4>BEM KM Fakultas Kedokteran</h4>
 					</div>	
@@ -178,7 +183,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas PSKG</h4>
 					</div>	
@@ -186,7 +191,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas PSIK</h4>
 					</div>	
@@ -194,7 +199,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Psikologi</h4>
 					</div>	
@@ -202,7 +207,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Pertanian</h4>
 					</div>	
@@ -212,7 +217,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas</br> Keguruan dan Ilmu Pendiidkan </h4>
 					</div>	
@@ -220,7 +225,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/fisip.jpg"/>
+							<img src="logo/fisip.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas</br> Ilmu Sosial dan Ilmu Politik</h4>
 					</div>	
@@ -228,7 +233,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4 style="font-size: 17px;">BEM KM Fakultas</br> Matematika dan Ilmu Pengetahuan Alam</h4>
 					</div>	
@@ -236,7 +241,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg"/>
+							<img src="logo/unsri.jpg" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Ilmu Komputer</h4>
 					</div>	
@@ -246,7 +251,7 @@
 				<a href="http://www.bem.fkm.unsri.ac.id/">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/fkm.jpg"/>
+							<img src="logo/fkm.jpg" class="logo_img" />
 						</div>	
 						<h4>BEM KM Fakultas Kesehatan Masyarakat</h4>
 					</div>	

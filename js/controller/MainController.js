@@ -1,6 +1,6 @@
 app.controller('MainController', function($scope, $http) {
 	$scope.result = [];
-	$http.get('http://localhost:8080/belajar/pmb2/api.php')
+	$http.get('http://pmbunsri.azurewebsites.net/pmb2/api.php')
 	.success(function(data) {
 		$scope.result = data;
 	});
@@ -8,7 +8,7 @@ app.controller('MainController', function($scope, $http) {
 
 app.controller('MainController2', function($scope, $http) {
 	$scope.result = [];
-	$http.get('http://localhost:8080/belajar/pmb2/api2.php')
+	$http.get('http://pmbunsri.azurewebsites.net/pmb2/api2.php')
 	.success(function(data) {
 		$scope.result = data;
 	});
