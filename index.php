@@ -171,7 +171,7 @@
 						<h4>BEM KM Fakultas Teknik</h4>
 					</div>	
 				</a>
-				<a href="www.fkunsribem.wix.com/fkunsribem ">
+				<a href="http://www.fkunsribem.wix.com/fkunsribem ">
 					<div class="col-md-3">
 						<div class="logo">
 							<img src="logo/fk.jpg" class="logo_img" />
