@@ -16,6 +16,8 @@
 		$password 			= randString(8);
 
 		$sql				= sprintf("INSERT INTO maba(nim, nama, fakultas, jurusan, password, no_hp, facebook) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')", mysqli_real_escape_string($connection, $nim), mysqli_real_escape_string($connection, $nama), mysqli_real_escape_string($connection, $fakultas), mysqli_real_escape_string($connection, $jurusan), mysqli_real_escape_string($connection, $password), mysqli_real_escape_string($connection, $no_hp), mysqli_real_escape_string($connection, $facebook));
+		echo $sql;
+		exit;
 		mysqli_query($connection, $sql) or die(mysql_error());
 
 		$_SESSION['nim_maba'] 	= $nim;

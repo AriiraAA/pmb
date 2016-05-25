@@ -30,7 +30,7 @@
 				?>
 			</div>
 		<?php endif;  ?>
-		<form style="width: 70%; margin: 0 auto;" action="generate.php" method="POST" enctype="multipart/form-data">
+		<form style="width: 70%; margin: 0 auto;" action="generate.php" method="POST">
 			<div class="form-group">
 				<label for="nama">Nama <span class="required">*</span></label>
 				<input class="form-control" type="text" name="nama">
