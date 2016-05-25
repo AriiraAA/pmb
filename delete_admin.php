@@ -16,7 +16,7 @@
 		exit;
 	}
 
-	$admin_nim = "DELETE FROM admin WHERE nim='".mysqli_real_escape_string($_GET['admin_nim'])."'";
+	$admin_nim = sprintf("DELETE FROM admin WHERE nim='%s'", mysqli_real_escape_string($_GET['admin_nim']));
 	echo $admin_nim;
 	exit;
 	mysqli_query($connection, "DELETE FROM admin WHERE nim='".mysqli_real_escape_string($_GET['admin_nim'])."'");
