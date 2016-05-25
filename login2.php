@@ -125,10 +125,10 @@
 						<div class="col-lg-12">
 							<form id="login-form" action="login_process.php" method="POST" role="form" style="display: block;">
 								<div class="form-group">
-									<input type="text" name="nim" id="username" tabindex="1" class="form-control" placeholder="NIM" value="">
+									<input type="text" name="nim" tabindex="1" class="form-control" placeholder="NIM">
 								</div>
 								<div class="form-group">
-									<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									<input type="password" name="password" tabindex="2" class="form-control" placeholder="Password">
 								</div>
 								<div class="form-group">
 									<div class="row">
@@ -140,10 +140,10 @@
 							</form>
 							<form id="register-form" action="auth_process.php" method="POST" role="form" style="display: none;">
 								<div class="form-group">
-									<input type="text" name="nim" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									<input type="text" name="nim" tabindex="1" class="form-control" placeholder="NIM">
 								</div>
 								<div class="form-group">
-									<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									<input type="password" name="password" tabindex="2" class="form-control" placeholder="Password">
 								</div>
 								<div class="form-group">
 									<div class="row">
