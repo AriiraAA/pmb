@@ -2,11 +2,12 @@
 	session_start();
 	require_once "connect.php";
 
-	if (!empty($_POST["nim"]) && !empty($_POST["nama"]) && !empty($_POST["fakultas"]) && !empty($_POST["jurusan"])) {
+	if (!empty($_POST["nim"]) && !empty($_POST["nama"]) && !empty($_POST["fakultas"]) && !empty($_POST["jurusan"]) && !empty($_POST["no_hp"])) {
 		$nim				= $_POST["nim"];
 		$nama 				= $_POST["nama"];
 		$fakultas			= $_POST["fakultas"];
 		$jurusan			= $_POST["jurusan"];
+		$no_hp				= $_POST["no_hp"];
 		if (!empty($_POST['facebook'])) {
 			$facebook = $_POST['facebook'];
 		} else {
