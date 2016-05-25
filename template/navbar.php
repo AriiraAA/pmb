@@ -24,7 +24,7 @@
 		    	if (isset($_SESSION['nim'])) {
 		    		echo '<a class="item" href="logout.php">Logout</a>';
 		    	} else {
-		    		echo '<a class="item" href="login2.php">Login</a>';
+		    		echo '<a class="item" href="login_maba.php">Login</a>';
 		    	}
 		    ?>	
         </li>
