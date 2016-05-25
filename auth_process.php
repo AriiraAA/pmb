@@ -2,6 +2,9 @@
 	session_start();  
 	require_once "connect.php";
 
+	echo $_POST['nim'] . " - " . $_POST['password'];
+	exit;
+
 	$_SESSION['status'] = "gagal";
 
 	if (isset($_POST['nim'], $_POST['password'])) {
