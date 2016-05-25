@@ -22,7 +22,7 @@ app.filter('searchFor', function() {
 		var result = [];
 		searchString = searchString.toLowerCase();
 		angular.forEach(arr, function(item) {
-			if ((item.jurusan).toLowerCase().indexOf(searchString) !== -1) {
+			if ((item.nama).toLowerCase().indexOf(searchString) !== -1) {
 				result.push(item);
 			}
 		});

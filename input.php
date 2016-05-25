@@ -15,89 +15,64 @@
 	<center>
 		<h1 style="margin-top: 6%">Form Pengisian Data Mahasiswa Baru Universitas Sriwijaya</h1>		
 	</center>
-	  <form style="margin-top: 3%;" id="form-alumni" class="ui form" action="generate.php" method="POST" enctype="multipart/form-data">
-	  	<div class="ui grid">
-	  		<div class="four wide column">
-	  			
-	  		</div>
-		  	<div class="seven wide column">
-		  		<?php if (isset($_SESSION["status"]) && $_SESSION["status"] === "Success"): ?>
-			  		<div class="ui form success">
-			  			<div class="ui success message">
-					  		<div class="header">Sukses</div>
-					  		<p>Data anda telah dimasukkan</p>
-					  		<p>NIM: <?= $_SESSION['nim_maba'] ?></p>
-					  		<p>Password: <b><?= $_SESSION['password'] ?></b></p>
-					  		<p>Catat terlebih dahulu nim dan password anda sebelum refresh halaman ini</p>
-					  		<p><a href="input2.php">Refresh</a></p>
-					  	</div>
-			  		</div>
-			  		<br/><br/>
-				<?php elseif (isset($_SESSION["status"]) && $_SESSION["status"] === "Failed"): ?>
-					<div class="ui form error">
-						<div class="ui error message">
-					  		<div class="header">Error</div>
-					  		<p>Data anda gagal dimasukkan</p>
-					  	</div>
-					</div>
-					<br/><br/>
-				<?php endif; ?>
-		  		<div class="field">
-		  			<label for="nama">Nama</label>
-		  			<input type="text" name="nama" />
-		  		</div>
-		  		<div class="field">
-		  			<label for="nim">NIM</label>
-		  			<input type="text" name="nim" />
-		  		</div>
-		  		<div class="field">
-			  		<label for="fakultas">Fakultas <span class="required">*</span></label>
-			  		<select class="ui dropdown" name="fakultas" id="fakultas">
-			  			<option value=""></option>
-			  			<option value="Kedokteran">Kedokteran</option>
-			  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-			  			<option value="Teknik">Teknik</option>
-			  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-			  			<option value="Pertanian">Pertanian</option>
-			  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-			  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-			  			<option value="Ekonomi">Ekonomi</option>
-			  			<option value="Hukum">Hukum</option>
-			  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-			  		</select>
-			  	</div>
-			  	<div class="field">
-			  		<label for="jurusan">Jurusan <span class="required">*</span></label>
-			  		<select class="ui dropdown" name="jurusan" id="jurusan">
-			  			<option value=""></option>
-			  			<option value="Komputer Akuntansi (D3)">Komputer Akuntansi (D3)</option>
-			  			<option value="Manajemen Informatika (D3)">Manajemen Informatika (D3)</option>
-			  			<option value="Sistem Informasi (S1 Bilingual)">Sistem Informasi (S1 Bilingual)</option>
-			  			<option value="Sistem Informasi (S1 Profesional)">Sistem Informasi (S1 Profesional)</option>
-			  			<option value="Sistem Informasi (S1 Reguler)">Sistem Informasi (S1 Reguler)</option>
-			  			<option value="Teknik Komputer dan Jaringan (D3)">Teknik Komputer dan Jaringan (D3)</option>
-			  			<option value="Teknik Komputer (D3)">Teknik Komputer (D3)</option>
-			  			<option value="Sistem Komputer (S1 Reguler)">Sistem Komputer (S1 Reguler)</option>
-			  			<option value="Sistem Komputer (S1 Profesional)">Sistem Komputer (S1 Profesional)</option>
-			  			<option value="Teknik Informatika (S1 Reguler)">Teknik Informatika (S1 Reguler)</option>
-			  			<option value="Teknik Informatika (S1 Bilingual)">Teknik Informatika (S1 Bilingual)</option>
-			  		</select>
-			  	</div>
-		  		<div class="field">
-		  			<label for="no_hp">No Hp</label>
-		  			<input type="text" name="no_hp" />
-		  		</div>
-		  		<center>
-		  			<input class="ui positive button" type="submit" value="Submit" />
-		  		</center>
+	<div class="container">
+		<form style="width: 70%; margin: 0 auto;" action="generate.php" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="nama">Nama <span class="required">*</span></label>
+				<input class="form-control" type="text" name="nama">
+			</div>
+			<div class="form-group">
+				<label for="nim">NIM <span class="required">*</span></label>
+				<input class="form-control" type="text" name="nim">
+			</div>
+			<div class="form-group">
+		  		<label for="fakultas">Fakultas <span class="required">*</span></label>
+		  		<select class="form-control" name="fakultas" id="fakultas">
+		  			<option></option>
+		  			<option value="Kedokteran">Kedokteran</option>
+		  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+		  			<option value="Teknik">Teknik</option>
+		  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+		  			<option value="Pertanian">Pertanian</option>
+		  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+		  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+		  			<option value="Ekonomi">Ekonomi</option>
+		  			<option value="Hukum">Hukum</option>
+		  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+		  		</select>
 		  	</div>
-		</div>	
-	  </form>
-	  
+		  	<div class="form-group">
+		  		<label for="jurusan">Jurusan <span class="required">*</span></label>
+		  		<select class="form-control" name="jurusan" id="jurusan">
+		  			<option value=""></option>
+		  			<option value="Komputer Akuntansi (D3)">Komputer Akuntansi (D3)</option>
+		  			<option value="Manajemen Informatika (D3)">Manajemen Informatika (D3)</option>
+		  			<option value="Sistem Informasi (S1 Bilingual)">Sistem Informasi (S1 Bilingual)</option>
+		  			<option value="Sistem Informasi (S1 Profesional)">Sistem Informasi (S1 Profesional)</option>
+		  			<option value="Sistem Informasi (S1 Reguler)">Sistem Informasi (S1 Reguler)</option>
+		  			<option value="Teknik Komputer dan Jaringan (D3)">Teknik Komputer dan Jaringan (D3)</option>
+		  			<option value="Teknik Komputer (D3)">Teknik Komputer (D3)</option>
+		  			<option value="Sistem Komputer (S1 Reguler)">Sistem Komputer (S1 Reguler)</option>
+		  			<option value="Sistem Komputer (S1 Profesional)">Sistem Komputer (S1 Profesional)</option>
+		  			<option value="Teknik Informatika (S1 Reguler)">Teknik Informatika (S1 Reguler)</option>
+		  			<option value="Teknik Informatika (S1 Bilingual)">Teknik Informatika (S1 Bilingual)</option>
+		  		</select>
+		  	</div>
+	  		<div class="form-group">
+	  			<label for="no_hp">No Hp <span class="required">*</span></label>
+	  			<input class="form-control" type="text" name="no_hp" />
+	  		</div>
+	  		<div class="form-group">
+	  			<label for="facebook">Facebook</label>
+	  			<input class="form-control" type="text" name="facebook">
+	  		</div>
+	  		<center>
+	  			<input class="btn btn-success" type="submit" value="Submit">
+	  		</center>
+		</form>
+	</div>
 
 	  <script type="text/javascript">
-	  	$("select.dropdown").dropdown();
-
 	  	$("#fakultas").on("change", function() {
   			var fakultas = $("#fakultas").val();
 
@@ -186,17 +161,6 @@
   			}
   		});
 
-  		$('#help')
-		  .popup({
-		    inline   : true,
-		    hoverable: true,
-		    position : 'top left',
-		    delay: {
-		      show: 300,
-		      hide: 300
-		    }
-		  })
-		;
 
 		var i = 1;
 		$("#tambah").click(function() {
@@ -214,21 +178,8 @@
 			  		'<input type="text" name="tahun[' + i + ']" />' +
 			  	'</div>' +
   			'</div>');
-  			$("select.dropdown").dropdown();
 			i++;
 		});
-
-		$('#help_pendidikan')
-		  .popup({
-		    inline   : true,
-		    hoverable: true,
-		    position : 'top left',
-		    delay: {
-		      show: 300,
-		      hide: 300
-		    }
-		  })
-		;
 
 		var j = 1;
 		$("#tambah_pendidikan").click(function() {
@@ -242,7 +193,6 @@
 			  		'<input type="text" name="pendidikan_tahun[' + j + ']" />' +
 			  	'</div>' +
   			'</div>');
-  			$("select.dropdown").dropdown();
 			j++;
 		});
 	  </script>

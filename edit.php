@@ -17,329 +17,613 @@
 			$nim 					= $row['nim'];
 			$password 				= $row['password'];
 			$nama 					= $row['nama'];
+			$jenis_kelamin			= $row['jenis_kelamin'];
 			$jurusan				= $row['jurusan'];
 			$fakultas				= $row['fakultas'];
 			$ukt					= $row['ukt'];
 			$agama					= $row['agama'];
-			$golongan_darah			= $row['golongan_darah'];
 			$tempat_lahir			= $row['tempat_lahir'];
 			$tanggal_lahir			= $row['tanggal_lahir'];
 			$alamat_asal			= $row['alamat_asal'];
 			$alamat_sekarang		= $row['alamat_sekarang'];
+			$asal_daerah			= $row['asal_daerah'];
+			$skill 					= $row['skill'];
+			$nama_ayah				= $row['nama_ayah'];
+			$alamat_ayah			= $row['alamat_ayah'];
+			$pekerjaan_ayah			= $row['pekerjaan_ayah'];
+			$penghasilan_ayah		= $row['penghasilan_ayah'];
+			$no_hp_ayah				= $row['no_hp_ayah'];
+			$nama_ibu				= $row['nama_ibu'];
+			$alamat_ibu				= $row['alamat_ibu'];
+			$pekerjaan_ibu			= $row['pekerjaan_ibu'];
+			$penghasilan_ibu		= $row['penghasilan_ibu'];
+			$no_hp_ibu				= $row['no_hp_ibu'];
+			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
 			$no_hp					= $row['no_hp'];
+			$email 					= $row['email'];
 			$facebook				= $row['facebook'];
-			$twitter				= $row['twitter'];
-			$id_line				= $row['id_line'];
-			$instagram				= $row['instagram'];
-			$pin_bbm				= $row['pin_bbm'];
-			$pendidikan_sekolah		= explode(',', $row['riwayat_pendidikan']);
-			$pendidikan_tahun		= explode(',', $row['tahun_pendidikan']);
-			$prestasi				= explode(',', $row['riwayat_prestasi']);
-			$instansi				= explode(',', $row['pemberi_prestasi']);
-			$tahun					= explode(',', $row['tahun_prestasi']);
+			$isu 					= $row['isu'];
+			$anak_ke 				= explode(',', $row['anak_ke']);
+			$riwayat_pendidikan		= explode(',', $row['riwayat_pendidikan']);
+			$tahun_pendidikan		= explode(',', $row['tahun_pendidikan']);
+			$riwayat_prestasi		= explode(',', $row['riwayat_prestasi']);
+			$pemberi_prestasi		= explode(',', $row['pemberi_prestasi']);
+			$tahun_prestasi			= explode(',', $row['tahun_prestasi']);
+			$riwayat_organisasi		= explode(',', $row['riwayat_organisasi']);
+			$tahun_organisasi		= explode(',', $row['tahun_organisasi']);
+			$jabatan_organisasi		= explode(',', $row['jabatan_organisasi']);
 		}
 	}
 ?>
 
 <?php include "template/header.php"; ?>
 <body>
-
+	<script src="https://use.fontawesome.com/b24094c187.js"></script>
 	<?php include "template/navbar.php"; ?>
 
-	<center>
-		<h1 style="margin-top: 6%">Form Pengisian Data Mahasiswa Baru Universitas Sriwijaya</h1>		
-	</center>
-	<?php if (isset($_SESSION["status"]) && $_SESSION["status"] === "Success"): ?>
-  		<div class="ui form success">
-  			<div class="ui success message">
-		  		<div class="header">Sukses</div>
-		  		<p>Data anda telah dimasukkan</p>
-		  	</div>
-  		</div>
-	<?php elseif (isset($_SESSION["status"]) && $_SESSION["status"] === "Failed"): ?>
-		<div class="ui form error">
-			<div class="ui error message">
-		  		<div class="header">Error</div>
-		  		<p>Data anda gagal dimasukkan</p>
-		  	</div>
-		</div>
-	<?php endif; ?>
-	  <form style="margin-top: 3%;" id="form-alumni" class="ui form" action="edit_process.php" method="POST" enctype="multipart/form-data">
-	  	<div class="ui grid">
-	  		<div class="four wide column">
-	  			<input type="hidden" name="edit" value="editing" />
+	<div class="container">
+		<center>
+			<h1 style="margin-top: 6%">Form Pengisian Data Mahasiswa Baru Universitas Sriwijaya</h1>		
+		</center>
+		<?php if (isset($_SESSION["status"]) && $_SESSION["status"] === "Success"): ?>
+	  		<div class="alert alert-success">
+	  			<p><b>Sukses</b></p>
+	  			<p>Data anda berhasil diedit</p>
 	  		</div>
-		  	<div class="seven wide column">
-		  		<table class="ui definition table">
-					<tbody>
-						<tr>
-							<td colspan="2" style="text-align: center;">
-								<img width="240" height="250" src="<?= 'foto/' . $nim . '.png' ?>" />
-							</td>
-						</tr>
-						<tr>
-							<td>NIM</td>
-							<td>
-								<?= $nim ?>
-								<input type="hidden" name="nim" id="nim" value="<?= $nim ?>" />
-							</td>
-						</tr>
-						<tr>
-							<td>Password</td>
-							<td>
-								<input type="text" name="password" value="<?= $password ?>" />
-							</td>
-						</tr>
-						<tr>
-							<td>Nama</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="nama" id="nama" value="<?= $nama ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Jurusan</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="jurusan" id="jurusan" value="<?= $jurusan ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Fakultas</td>
-							<td>
-								<select class="ui dropdown" name="fakultas" id="fakultas">
-									<?php if ($fakultas == "Kedokteran"): ?>
-										<option value="Kedokteran">Kedokteran</option>
-										<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-									<?php elseif ($fakultas == "Kesehatan Masyarakat"): ?>
-										<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-										<option value="Kedokteran">Kedokteran</option>
-										<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Teknik"): ?>
-										<option value="Teknik">Teknik</option>
-										<option value="Kedokteran">Kedokteran</option>
-						  				<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-										<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Matematika dan Ilmu Pengetahuan Alam"): ?>
-										<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-										<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Pertanian"): ?>
-							  			<option value="Pertanian">Pertanian</option>
-										<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-										<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Keguruan dan Ilmu Pendidikan"): ?>
-										<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-										<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Ilmu Komputer"): ?>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-										<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-						  				<option value="Hukum">Hukum</option>
-						  				<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-						  			<?php elseif ($fakultas == "Ekonomi"): ?>
-						  				<option value="Ekonomi">Ekonomi</option>
-						  				<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Hukum"): ?>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  		<?php elseif ($fakultas == "Ilmu Sosial dan Ilmu Politik"): ?>
-							  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-							  			<option value="Hukum">Hukum</option>
-							  			<option value="Kedokteran">Kedokteran</option>
-							  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-							  			<option value="Teknik">Teknik</option>
-							  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-							  			<option value="Pertanian">Pertanian</option>
-							  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-							  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-							  			<option value="Ekonomi">Ekonomi</option>
-									<?php endif; ?>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td>UKT</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="ukt" id="ukt" value="<?= $ukt ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Agama</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="agama" id="agama" value="<?= $agama ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Tempat Lahir</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="tempat_lahir" id="tempat_lahir" value="<?= $tempat_lahir ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Tanggal Lahir</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="tanggal_lahir" id="tanggal_lahir" value="<?= $tanggal_lahir ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Alamat Asal</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="alamat_asal" id="alamat_asal" value="<?= $alamat_asal ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Alamat Sekarang</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="alamat_sekarang" id="alamat_sekarang" value="<?= $alamat_sekarang ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Golongan Darah</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="golongan_darah" id="golongan_darah" value="<?= $golongan_darah ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>No HP</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="no_hp" id="no_hp" value="<?= $no_hp ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Facebook</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="facebook" id="facebook" value="<?= $facebook ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Twitter</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="twitter" id="twitter" value="<?= $twitter ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>ID Line</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="id_line" id="id_line" value="<?= $id_line ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Instagram</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="instagram" id="instagram" value="<?= $instagram ?>" />
-						  		</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Pin BBM</td>
-							<td>
-								<div class="field">
-						  			<input type="text" name="pin_bbm" id="pin_bbm" value="<?= $pin_bbm ?>" />
-						  		</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+		<?php elseif (isset($_SESSION["status"]) && $_SESSION["status"] === "Failed"): ?>
+			<div class="alert alert-danger">
+	  			<p><b>Gagal</b></p>
+	  			<p>Data anda gagal diedit</p>
+	  		</div>
+		<?php endif; ?>
+		<form action="edit_process.php" method="POST" enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="glyphicon glyphicon-user"></i> Data Pribadi</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="form-group">
+					    	<label for="nama">Nama</label>
+					    	<input class="form-control" type="text" name="nama" value="<?= $nama ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="nim">NIM</label>
+					    	<input class="form-control" type="text" name="nim" value="<?= $nim ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="password">Password</label>
+					    	<input class="form-control" type="text" name="password" value="<?= $password ?>">
+					    </div>
+					    <div class="form-group">
+					    	<div>
+					    		<label for="nama">Jenis Kelamin</label>					    		
+					    	</div>
+					    	<?php if ($jenis_kelamin == "Laki-laki"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Laki-laki" checked>
+						    		Laki-laki
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Perempuan">
+						    		Perempuan
+						    	</label>
+					    	<?php elseif ($jenis_kelamin == "Perempuan"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Laki-laki">
+						    		Laki-laki
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Perempuan" checked>
+						    		Perempuan
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Laki-laki">
+						    		Laki-laki
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="jenis_kelamin" value="Perempuan">
+						    		Perempuan
+						    	</label>
+					    	<?php endif; ?>
+					    </div>
+					    <div class="form-group">
+					    	<label for="fakultas">Fakultas</label>
+					    	<select class="form-control" name="fakultas" id="fakultas">
+								<?php if ($fakultas == "Kedokteran"): ?>
+									<option value="Kedokteran">Kedokteran</option>
+									<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+								<?php elseif ($fakultas == "Kesehatan Masyarakat"): ?>
+									<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+									<option value="Kedokteran">Kedokteran</option>
+									<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Teknik"): ?>
+									<option value="Teknik">Teknik</option>
+									<option value="Kedokteran">Kedokteran</option>
+					  				<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+									<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Matematika dan Ilmu Pengetahuan Alam"): ?>
+									<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+									<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Pertanian"): ?>
+						  			<option value="Pertanian">Pertanian</option>
+									<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+									<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Keguruan dan Ilmu Pendidikan"): ?>
+									<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+									<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Ilmu Komputer"): ?>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+									<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+					  				<option value="Hukum">Hukum</option>
+					  				<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+					  			<?php elseif ($fakultas == "Ekonomi"): ?>
+					  				<option value="Ekonomi">Ekonomi</option>
+					  				<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Hukum"): ?>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  		<?php elseif ($fakultas == "Ilmu Sosial dan Ilmu Politik"): ?>
+						  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+						  			<option value="Hukum">Hukum</option>
+						  			<option value="Kedokteran">Kedokteran</option>
+						  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+						  			<option value="Teknik">Teknik</option>
+						  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
+						  			<option value="Pertanian">Pertanian</option>
+						  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+						  			<option value="Ilmu Komputer">Ilmu Komputer</option>
+						  			<option value="Ekonomi">Ekonomi</option>
+								<?php endif; ?>
+							</select>
+					    </div>
+					    <div class="form-group">
+					    	<label for="jurusan">Jurusan</label>
+					    	<input class="form-control" type="text" name="jurusan" value="<?= $jurusan ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="ukt">UKT</label>
+					    	<input class="form-control" type="text" name="ukt" value="<?= $ukt ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="agama">Agama</label>
+					    	<input class="form-control" type="text" name="agama" value="<?= $agama ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="tempat_lahir">Tempat Lahir</label>
+					    	<input class="form-control" type="text" name="tempat_lahir" value="<?= $tempat_lahir ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="tanggal_lahir">Tanggal Lahir</label>
+					    	<input class="form-control" type="text" name="tanggal_lahir" value="<?= $tanggal_lahir ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="alamat_asal">Alamat Asal</label>
+					    	<input class="form-control" type="text" name="alamat_asal" value="<?= $alamat_asal ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="alamat_sekarang">Alamat Sekarang</label>
+					    	<input class="form-control" type="text" name="alamat_sekarang" value="<?= $alamat_sekarang ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="asal_daerah">Asal Daerah</label>
+					    	<input class="form-control" type="text" name="asal_daerah" value="<?= $asal_daerah ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="skill">Skill</label>
+					    	<input class="form-control" type="text" name="skill" value="<?= $skill ?>">
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					 <div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-users"></i> Data Keluarga</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="panel panel-info">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Data Ayah</h3>
+						  </div>
+						  <div class="panel-body">
+						    <div class="form-group">
+						    	<label for="nama_ayah">Nama Ayah</label>
+						    	<input class="form-control" type="text" name="nama_ayah" value="<?= $nama_ayah ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="alamat_ayah">Alamat Ayah</label>
+						    	<input class="form-control" type="text" name="alamat_ayah" value="<?= $alamat_ayah ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+						    	<input class="form-control" type="text" name="pekerjaan_ayah" value="<?= $pekerjaan_ayah ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="penghasilan_ayah">Penghasilan Ayah (per bulan)</label>
+						    	<input class="form-control" type="text" name="penghasilan_ayah" value="<?= $penghasilan_ayah ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="no_hp_ayah">No HP Ayah</label>
+						    	<input class="form-control" type="text" name="no_hp_ayah" value="<?= $no_hp_ayah ?>">
+						    </div>
+						  </div>
+						</div>
+						<div class="panel panel-info">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Data Ibu</h3>
+						  </div>
+						  <div class="panel-body">
+						    <div class="form-group">
+						    	<label for="nama_ibu">Nama Ibu</label>
+						    	<input class="form-control" type="text" name="nama_ibu" value="<?= $nama_ibu ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="alamat_ibu">Alamat Ibu</label>
+						    	<input class="form-control" type="text" name="alamat_ibu" value="<?= $alamat_ibu ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+						    	<input class="form-control" type="text" name="pekerjaan_ibu" value="<?= $pekerjaan_ibu ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="penghasilan_ibu">Penghasilan Ibu (per bulan)</label>
+						    	<input class="form-control" type="text" name="penghasilan_ibu" value="<?= $penghasilan_ibu ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="no_hp_ibu">No HP Ibu</label>
+						    	<input class="form-control" type="text" name="no_hp_ibu" value="<?= $no_hp_ibu ?>">
+						    </div>
+						  </div>
+						</div>
+						<label for="anak_ke">Anak Ke-</label>
+						<div class="form-inline">
+							<?php if (isset($anak_ke) && $anak_ke != ''): ?>
+								<div class="form-group">
+									<input class="form-control" type="text" name="anak_ke" value="<?php if (isset($anak_ke[0])) echo $anak_ke[0]; ?>" />
+								</div>
+								<div class="form-group">
+									<label for="saudara"> dari </label>
+									<input class="form-control" type="text" name="saudara" value="<?php if (isset($anak_ke[1])) echo $anak_ke[1]; ?>" />
+									<label> bersaudara </label>
+								</div>
+							<?php elseif (isset($anak_ke) && ($anak_ke == '' || $anak_ke == null)): ?>
+								<div class="form-group">
+									<input class="form-control" type="text" name="anak_ke" />
+								</div>
+								<div class="form-group">
+									<label for="saudara"> dari </label>
+									<input class="form-control" type="text" name="saudara" />
+									<label> bersaudara </label>
+								</div>
+							<?php endif; ?>
+						</div>
+						<div class="form-group">
+							<label for="jumlah_tanggungan">Jumlah Tanggungan</label>
+							<input class="form-control" type="text" name="jumlah_tanggungan" value="<?= $jumlah_tanggungan ?>">
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-phone"></i> Kontak</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="form-group">
+					    	<label for="no_hp">No HP / WhatsApp</label>
+					    	<div class="input-group">
+					    		<span class="input-group-addon"><i class="fa fa-whatsapp"></i></span>
+					    		<input class="form-control" type="text" name="no_hp" value="<?= $no_hp ?>" />
+					    	</div>
+					    </div>
+					    <div class="form-group">
+					    	<label for="email">Email</label>
+					    	<div class="input-group">
+					    		<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					    		<input class="form-control" type="email" name="email" value="<?= $email ?>" />
+					    	</div>
+					    </div>
+					    <div class="form-group">
+					    	<label for="facebook">Facebook</label>
+					    	<div class="input-group">
+					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+					    		<input class="form-control" type="text" name="facebook" value="<?= $facebook ?>" />
+					    	</div>
+					    </div>
+					  </div>
+					</div>
+
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-institution"></i> Riwayat Pendidikan</h3>
+					    <span id="tambah_pendidikan" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-plus"></i> Tambah</span>
+					  </div>
+					  <div class="panel-body">
+						<div id="pendidikan_wrapper" class="riwayat_pendidikan">
+							<?php
+								$jumlah_data_pendidikan = count($riwayat_pendidikan); 
+								if (count($riwayat_pendidikan) > 0) {
+									for ($i = 0; $i < count($riwayat_pendidikan); $i++) {
+										echo '<div class="panel panel-default">
+												<div class="panel-body">
+													<div class="row">
+										  				<div class="col-md-6">
+													  		<label for="prestasi">Nama Sekolah</label>
+													  		<input class="form-control" type="text" name="riwayat_pendidikan[' . $i . ']" value="'.$riwayat_pendidikan[$i].'" />
+													  	</div>
+													  	<div class="col-md-6">
+													  		<label for="tahun">Tahun Lulus</label>
+													  		<input class="form-control" type="text" name="tahun_pendidikan[' . $i . ']" value="'.$tahun_pendidikan[$i].'"/>
+													  	</div>
+										  			</div>
+										  		</div>
+										  	</div>';
+									}
+								} else {
+									echo '<div class="panel panel-default">
+												<div class="panel-body">
+											<div class="row">
+								  				<div class="col-md-6">
+											  		<label for="prestasi">Nama Sekolah</label>
+											  		<input class="form-control" type="text" name="riwayat_pendidikan[0]"/>
+											  	</div>
+											  	<div class="col-md-6">
+											  		<label for="tahun">Tahun Lulus</label>
+											  		<input class="form-control" type="text" name="tahun_pendidikan[0]"/>
+											  	</div>
+								  			</div>
+								  		</div>
+									</div>';
+								}
+							?>
+						</div>
+					  </div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-users"></i> Riwayat Organisasi</h3>
+					    <div id="tambah_organisasi" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-plus"></i> Tambah</div>
+					  </div>
+					  <div class="panel-body">
+						<div id="organisasi_wrapper" class="riwayat_organisasi">
+							<?php 
+								$jumlah_data_organisasi = count($riwayat_organisasi); 
+								if (count($riwayat_organisasi) > 0) {
+									for ($i = 0; $i < count($riwayat_organisasi); $i++) {
+										echo '<div class="panel panel-default">
+												<div class="panel-body">
+											<div class="row">
+								  				<div class="col-md-4">
+											  		<label for="organisasi">Nama Organisasi</label>
+											  		<input class="form-control" type="text" name="riwayat_organisasi[' . $i . ']" value="'.$riwayat_organisasi[$i].'"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="tahun">Tahun Organisasi</label>
+											  		<input class="form-control" type="text" name="tahun_organisasi[' . $i . ']" value="'.$tahun_organisasi[$i].'"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="jabatan">Jabatan</label>
+											  		<input class="form-control" type="text" name="jabatan_organisasi[' . $i . ']" value="'.$jabatan_organisasi[$i].'"/>
+											  	</div>
+											  	</div>
+											  	</div>
+								  			</div>';
+									}
+								} else {
+									echo '<div class="panel panel-default">
+												<div class="panel-body">
+										<div class="row">
+								  				<div class="col-md-4">
+											  		<label for="prestasi">Nama Prestasi</label>
+											  		<input class="form-control" type="text" name="riwayat_pendidikan[0]"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Tahun Prestasi</label>
+											  		<input class="form-control" type="text" name="tahun_prestasi[0]"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Instansi Pemberi</label>
+											  		<input class="form-control" type="text" name="pemberi_prestasi[0]"/>
+											  	</div>
+											  	</div>
+											  	</div>
+								  			</div>';
+								}
+							?>
+						</div>
+					  </div>
+					</div>
+				</div>
+					
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-archive"></i> Riwayat Prestasi</h3>
+					    <div id="tambah" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-plus"></i> Tambah</div>
+					  </div>
+					  <div class="panel-body">
+						<div id="wrapper" class="riwayat_prestasi">
+							<?php 
+								$jumlah_data_prestasi = count($riwayat_prestasi); 
+								if (count($riwayat_prestasi) > 0) {
+									for ($i = 0; $i < count($riwayat_prestasi); $i++) {
+										echo '<div class="panel panel-default">
+												<div class="panel-body">
+											<div class="row">
+								  				<div class="col-md-4">
+											  		<label for="prestasi">Nama Prestasi</label>
+											  		<input class="form-control" type="text" name="riwayat_prestasi[' . $i . ']" value="'.$riwayat_prestasi[$i].'"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Tahun Prestasi</label>
+											  		<input class="form-control" type="text" name="tahun_prestasi[' . $i . ']" value="'.$tahun_prestasi[$i].'"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Instansi Pemberi</label>
+											  		<input class="form-control" type="text" name="pemberi_prestasi[' . $i . ']" value="'.$pemberi_prestasi[$i].'"/>
+											  	</div>
+											  	</div>
+											  	</div>
+								  			</div>';
+									}
+								} else {
+									echo '<div class="panel panel-default">
+												<div class="panel-body">
+										<div class="row">
+								  				<div class="col-md-4">
+											  		<label for="prestasi">Nama Prestasi</label>
+											  		<input class="form-control" type="text" name="riwayat_prestasi[0]"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Tahun Prestasi</label>
+											  		<input class="form-control" type="text" name="tahun_prestasi[0]"/>
+											  	</div>
+											  	<div class="col-md-4">
+											  		<label for="instansi">Instansi Pemberi</label>
+											  		<input class="form-control" type="text" name="pemberi_prestasi[0]"/>
+											  	</div>
+											  	</div>
+											  	</div>
+								  			</div>';
+								}
+							?>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-comments"></i> Panel Aspirasi</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="form-group">
+					    	<div>
+					    		<label for="isu">Apakah anda setuju dengan kuliah maksimal 5 tahun?</label>
+					    	</div>
+					    	<?php if ($isu == "Setuju"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Setuju" checked>
+						    		Setuju
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Tidak Setuju">
+						    		Tidak Setuju
+						    	</label>
+						    <?php elseif ($isu == "Tidak Setuju"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Setuju">
+						    		Setuju
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Tidak Setuju" checked>
+						    		Tidak Setuju
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Setuju">
+						    		Setuju
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="isu" value="Tidak Setuju">
+						    		Tidak Setuju
+						    	</label>
+					    	<?php endif; ?>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div>
 				<center>
-					<input class="ui positive button" type="submit" value="Simpan Perubahan" />
-				</center>	
-		  	</div>	
-	  </form>
-	  
+					<input class="btn btn-success" type="submit" name="update" value="Simpan Perubahan" />
+				</center>
+			</div>
+		</form>
+	</div>
 
 	  <script type="text/javascript">
-	  	$("select.dropdown").dropdown();
-
 	  	$("#fakultas").on("change", function() {
   			var fakultas = $("#fakultas").val();
 
@@ -428,64 +712,68 @@
   			}
   		});
 
-  		$('#help')
-		  .popup({
-		    inline   : true,
-		    hoverable: true,
-		    position : 'top left',
-		    delay: {
-		      show: 300,
-		      hide: 300
-		    }
-		  })
-		;
-
-		var i = 1;
+		var i = <?= $jumlah_data_prestasi ?>;
 		$("#tambah").click(function() {
-			$("#wrapper").append('<div class="fields">' +
-  				'<div class="field">' +
+			$("#wrapper").append('<div class="panel panel-default">' +
+					'<div class="panel-body">' +
+				'<div class="row">' +
+  				'<div class="col-md-4">' +
 			  		'<label for="prestasi">Nama Prestasi</label>' +
-			  		'<input type="text" name="prestasi[' + i + ']"/>' +
+			  		'<input class="form-control" type="text" name="riwayat_prestasi[' + i + ']"/>' +
 			  	'</div>' +
-			  	'<div class="field">' +
+			  	'<div class="col-md-4">' +
+			  		'<label for="tahun">Tahun Prestasi</label>' +
+			  		'<input class="form-control" type="text" name="tahun_prestasi[' + i + ']" />' +
+			  	'</div>' +
+			  	'<div class="col-md-4">' +
 			  		'<label for="instansi">Instansi Pemberi</label>' +
-			  		'<input type="text" name="instansi[' + i + ']"/>' +
+			  		'<input class="form-control" type="text" name="pemberi_prestasi[' + i + ']"/>' +
 			  	'</div>' +
-			  	'<div class="field">' +
-			  		'<label for="tahun">Tahun</label>' +
-			  		'<input type="text" name="tahun[' + i + ']" />' +
-			  	'</div>' +
+  			'</div>' +
+  			'</div>' +
   			'</div>');
-  			$("select.dropdown").dropdown();
 			i++;
 		});
 
-		$('#help_pendidikan')
-		  .popup({
-		    inline   : true,
-		    hoverable: true,
-		    position : 'top left',
-		    delay: {
-		      show: 300,
-		      hide: 300
-		    }
-		  })
-		;
-
-		var j = 1;
+		var j = <?= $jumlah_data_pendidikan ?>;
 		$("#tambah_pendidikan").click(function() {
-			$("#pendidikan_wrapper").append('<div class="fields">' +
-  				'<div class="field">' +
+			$("#pendidikan_wrapper").append('<div class="panel panel-default">' +
+					'<div class="panel-body">' +'<div class="row">' +
+  				'<div class="col-md-6">' +
 			  		'<label for="prestasi">Nama Sekolah</label>' +
-			  		'<input type="text" name="pendidikan_sekolah[' + j + ']"/>' +
+			  		'<input class="form-control" type="text" name="pendidikan_sekolah[' + j + ']"/>' +
 			  	'</div>' +
-			  	'<div class="field">' +
-			  		'<label for="tahun">Tahun</label>' +
-			  		'<input type="text" name="pendidikan_tahun[' + j + ']" />' +
+			  	'<div class="col-md-6">' +
+			  		'<label for="tahun">Tahun Lulus</label>' +
+			  		'<input class="form-control" type="text" name="pendidikan_tahun[' + j + ']" />' +
 			  	'</div>' +
+			 '</div>' +
+  			'</div>' +
   			'</div>');
-  			$("select.dropdown").dropdown();
 			j++;
+		});
+
+		var k = <?= $jumlah_data_organisasi ?>;
+		$("#tambah_organisasi").click(function() {
+			$("#organisasi_wrapper").append('<div class="panel panel-default">' +
+					'<div class="panel-body">' +
+				'<div class="row">' +
+  				'<div class="col-md-4">' +
+			  		'<label for="organisasi">Nama Organisasi</label>' +
+			  		'<input class="form-control" type="text" name="riwayat_organisasi[' + k + ']"/>' +
+			  	'</div>' +
+			  	'<div class="col-md-4">' +
+			  		'<label for="tahun">Tahun Organisasi</label>' +
+			  		'<input class="form-control" type="text" name="tahun_organisasi[' + k + ']" />' +
+			  	'</div>' +
+			  	'<div class="col-md-4">' +
+			  		'<label for="jabatan">Jabatan</label>' +
+			  		'<input class="form-control" type="text" name="jabatan_organisasi[' + k + ']"/>' +
+			  	'</div>' +
+  			'</div>' +
+  			'</div>' +
+  			'</div>');
+			k++;
 		});
 	  </script>
 </body>

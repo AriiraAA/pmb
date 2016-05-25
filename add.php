@@ -20,5 +20,5 @@
 		}
 	}
 
-	header("Location: admin.php");
+	header("Location: admin_list.php");
 ?>

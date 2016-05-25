@@ -150,7 +150,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg" class="logo_img"/>
+							<img src="logo/BEMFE.png" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Ekonomi</h4>
 					</div>	
@@ -166,7 +166,7 @@
 				<a href="">
 					<div class="col-md-3">
 						<div class="logo">
-							<img src="logo/unsri.jpg" class="logo_img"/>
+							<img src="logo/BEMFT.png" class="logo_img"/>
 						</div>	
 						<h4>BEM KM Fakultas Teknik</h4>
 					</div>	
