@@ -28,9 +28,9 @@
 		  	<input class="btn btn-primary" type="submit" value="Login" />
 	  	</form>
 		<?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "gagal"): ?>
-			<div class="ui form error" style="width: 30%; margin: 0 auto;">
+			<div class="alert alert-danger" style="width: 30%; margin: 0 auto;">
 				<div class="ui error message">
-			  		<div class="header">Login Gagal!</div>
+			  		<div class="header"><b>Login Gagal!</b></div>
 			  		<p>NIM/Password anda salah</p>
 			  	</div>
 			</div>
