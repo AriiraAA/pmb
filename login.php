@@ -12,33 +12,20 @@
 
 	<?php include "template/navbar.php"; ?>
 
-	<center style="margin-top: 6%; margin-bottom: 3%;">
-		<h1>Login Admin</h1>
-	</center>
-	<div class="ui grid">
-		<div class="two wide column">
-			
-		</div>
-		<div class="four wide column">
-			
-		</div>
-		<div class="four wide column">
-			
-		</div>
-		<div class="four wide column">
-				
-		</div>
-	</div>
-	  	<form class="ui form" action="login_process.php" method="POST" style="width: 30%; margin: 0 auto;">
-	  		<div class="field">
+	<div class="container">
+		<center style="margin-top: 6%; margin-bottom: 3%;">
+			<h1>Login Admin</h1>
+		</center>
+		<form action="login_process.php" method="POST" style="width: 30%; margin: 0 auto;">
+	  		<div class="form-group">
 	  			<label for="nim">NIM <span class="required">*</span></label>
-	  			<input type="text" name="nim" id="nim" />
+	  			<input class="form-control" type="text" name="nim" id="nim" />
 	  		</div>
-		  	<div class="field">
+		  	<div class="form-group">
 		  		<label for="password">Password <span class="required">*</span></label>
-		  		<input type="password" name="password" id="password" />
+		  		<input class="form-control" type="password" name="password" id="password" />
 		  	</div>
-		  	<input class="ui primary button" type="submit" value="Login" />
+		  	<input class="btn btn-primary" type="submit" value="Login" />
 	  	</form>
 		<?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "gagal"): ?>
 			<div class="ui form error" style="width: 30%; margin: 0 auto;">
@@ -48,6 +35,7 @@
 			  	</div>
 			</div>
 		<?php endif; ?>
+	</div>
 
 	<?php include "template/footer.php"; ?>
 
