@@ -16,6 +16,20 @@
 		<h1 style="margin-top: 6%">Form Pengisian Data Mahasiswa Baru Universitas Sriwijaya</h1>		
 	</center>
 	<div class="container">
+		<?php if (isset($_SESSION['status']) && $_SESSION['status'] == "Success"): ?>
+			<div class="alert alert-success">
+				<p><b>Sukses!</b></p>
+				<p>Akun pendataan anda sudah terdaftar</p>
+				<p>NIM: <?= $_SESSION['nim_maba'] ?></p>
+				<p>Password: <b><?= $_SESSION['password'] ?></b></p>
+				<p><i>Harap catat dan ingat NIM dan Password anda sebelum di-refresh agar dapat digunakan untuk melengkapi data yang lebih lanjut serta untuk mendapatkan informasi-informasi selanjutnya</i></p>
+				<p><a href="input.php">Refresh</a></p>
+				<?php 
+					unset($_SESSION['nim_maba']);
+					unset($_SESSION['password']);
+				?>
+			</div>
+		<?php endif;  ?>
 		<form style="width: 70%; margin: 0 auto;" action="generate.php" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="nama">Nama <span class="required">*</span></label>
@@ -200,6 +214,4 @@
 </html>
 <?php
 	unset($_SESSION['status']);
-	unset($_SESSION['nim_maba']);
-	unset($_SESSION['password']);
 ?>
