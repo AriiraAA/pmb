@@ -4,10 +4,10 @@
 
 	if (!isset($_SESSION['nim']) || isset($_SESSION['role'])) {
 		if (isset($_SESSION['role'])) {
-			header("Location: login.php");
+			header("Location: login_admin.php");
 			exit;
 		} else {
-			header("Location: login2.php");
+			header("Location: login_maba.php");
 			exit;
 		}
 	} else {

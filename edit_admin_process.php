@@ -5,7 +5,7 @@
 	$_SESSION['status'] = "Failed";
 
 	if (!isset($_SESSION['nim']) || !isset($_SESSION['nama']) || !isset($_SESSION['role'])) {
-		header("Location: login.php");
+		header("Location: login_admin.php");
 		exit;
 	} else {
 		$nim	= $_SESSION['nim'];

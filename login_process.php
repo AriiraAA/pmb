@@ -23,12 +23,12 @@
 			}
 		} else {
 			$_SESSION['status'] = "gagal";
-			header("Location: login.php");
+			header("Location: login_admin.php");
 			exit;
 		}
 
 	} else {
-		header("Location: login.php");
+		header("Location: login_admin.php");
 		exit;
 	}
 ?>
