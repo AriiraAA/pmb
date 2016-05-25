@@ -117,7 +117,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="float:right;">
       <ul class="nav navbar-nav">
         <li><a href="fakultas.php">Data <span class="sr-only">(current)</span></a></li>
-        <li><a href="login2.php">Login</a></li>
+        <li><a href="login_maba.php">Login</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
