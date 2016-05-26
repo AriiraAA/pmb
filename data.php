@@ -27,7 +27,7 @@
 	
 	<center style="margin-top: 6%; margin-bottom: 3%;">
 		<h1>Data Mahasiswa Baru Universitas Sriwijaya</h1>
-		<h1><?= $_SERVER['HTTP_POST'] . $_SERVER['REQUEST_URI'] ?></h1>
+		<h1><?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?></h1>
 	</center>
 	<div class="container">
 		<div class="row">
