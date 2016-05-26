@@ -311,7 +311,7 @@
 		</div>
 	</div>
 	<center>
-		<a class="btn btn-danger" href="data.php"><i class="glyphicon glyphicon-arrow-left"></i> Back</a>
+		<button onclick="window.history.back();"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
 	</center>
 
 
