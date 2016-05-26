@@ -21,6 +21,8 @@
 	if (!isset($_GET['page'])) {
 		$currentUrl = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "&page=2";
 	}
+
+	$query_string = preg_split("/(=|&)/" ,$_SERVER['QUERY_STRING']);
 ?>
 
 <?php include "template/header.php"; ?>
@@ -31,7 +33,6 @@
 	
 	<center style="margin-top: 6%; margin-bottom: 3%;">
 		<h1>Data Mahasiswa Baru Universitas Sriwijaya</h1>
-		<h1><?= print_r(preg_split("/(=|&)/" ,$_SERVER['QUERY_STRING'])) ?></h1>
 	</center>
 	<div class="container">
 		<div class="row">
@@ -172,15 +173,29 @@
 		</table>
 		<div class="row">
 			<div class="col-md-6">
-				<?php if (isset($_GET['page'])): ?>
-					<a class="pull-left" href="">&lt; Previous</a>
+				<?php if (in_array("jurusan", $query_string)): ?>
+					<?php if (isset($_GET['page'])): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&jurusan=<?= $query_string[3] ?>&page=<?= $_GET['page'] - 1 ?>">&lt; Previous</a>
+					<?php endif; ?>
+				<?php else: ?>
+					<?php if (isset($_GET['page'])): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&page=<?= $_GET['page'] - 1 ?>">&lt; Previous</a>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 			<div class="col-md-6">
-				<?php if (isset($_GET['page'])): ?>
-					<a class="pull-right" href="">Next &gt;</a>
+				<?php if (in_array("jurusan", $query_string)): ?>
+					<?php if (isset($_GET['page'])): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&jurusan=<?= $query_string[3] ?>&page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
+					<?php else: ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&jurusan=<?= $query_string[3] ?>&page=2">Next &gt;</a>
+					<?php endif; ?>
 				<?php else: ?>
-					<a class="pull-right" href="">Next &gt;</a>
+					<?php if (isset($_GET['page'])): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
+					<?php else: ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?fakultas=<?= $query_string[1] ?>&page=2">Next &gt;</a>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 		</div>
