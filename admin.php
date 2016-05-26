@@ -99,9 +99,9 @@
 			</div>
 			<div class="col-md-6">
 					<?php if (isset($_GET['page']) && $_GET['page'] != 1): ?>
-						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/admin.php?page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
+						<a class="pull-right" href="http://pmbunsri.azurewebsites.net/admin.php?page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
 					<?php else: ?>
-						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/admin.php?page=2">Next &gt;</a>
+						<a class="pull-right" href="http://pmbunsri.azurewebsites.net/admin.php?page=2">Next &gt;</a>
 					<?php endif; ?>
 			</div>
 		</div>
