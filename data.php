@@ -17,6 +17,10 @@
 		$files []= $row['nim'].".png";
 	}
 	$i = 0;
+
+	if (!isset($_GET['page'])) {
+		$currentUrl = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "&page=2";
+	}
 ?>
 
 <?php include "template/header.php"; ?>
@@ -27,6 +31,7 @@
 	
 	<center style="margin-top: 6%; margin-bottom: 3%;">
 		<h1>Data Mahasiswa Baru Universitas Sriwijaya</h1>
+		<h1><?= $_SERVER['REQUEST_URI'] ?></h1>
 	</center>
 	<div class="container">
 		<div class="row">
@@ -165,6 +170,20 @@
 		    </tr>
 		  </tbody>
 		</table>
+		<div class="row">
+			<div class="col-md-6">
+				<?php if (isset($_GET['page'])): ?>
+					<a class="pull-left" href="">&lt; Previous</a>
+				<?php endif; ?>
+			</div>
+			<div class="col-md-6">
+				<?php if (isset($_GET['page'])): ?>
+					<a class="pull-right" href="">Next &gt;</a>
+				<?php else: ?>
+					<a class="pull-right" href="">Next &gt;</a>
+				<?php endif; ?>
+			</div>
+		</div>
 	</div>
 	
 
