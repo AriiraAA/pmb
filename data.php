@@ -10,6 +10,12 @@
 		exit;
 	}
 
+	if (isset($_GET['page'])) {
+		$_SESSION['page'] = $_GET['page'];
+	} else {
+		$_SESSION['page'] = 1;
+	}
+
 	require_once "connect.php";
 	$query = mysqli_query($connection, "SELECT nim FROM maba");
 	$files = array();
@@ -17,10 +23,6 @@
 		$files []= $row['nim'].".png";
 	}
 	$i = 0;
-
-	if (!isset($_GET['page'])) {
-		$currentUrl = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "&page=2";
-	}
 
 	$query_string = preg_split("/(=|&)/" ,$_SERVER['QUERY_STRING']);
 ?>
