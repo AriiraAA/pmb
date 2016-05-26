@@ -25,6 +25,8 @@
 	$i = 0;
 
 	$query_string = preg_split("/(=|&)/" ,$_SERVER['QUERY_STRING']);
+
+	
 ?>
 
 <?php include "template/header.php"; ?>
@@ -201,6 +203,16 @@
 				<?php endif; ?>
 			</div>
 		</div>
+
+		<h1>
+			<?php 
+				if (isset($_SESSION['page']) && $_SESSION['page'] != 1) {
+			echo "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='Ilmu Komputer' AND jurusan='Teknik Informatika' LIMIT 0, 60";
+		} else {
+			echo "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='Ilmu Komputer' AND jurusan='Teknik Informatika' LIMIT ".(string)(($_SESSION['page'] - 1) * 60).", 60";
+		}
+			?>
+		</h1>
 	</div>
 	
 
