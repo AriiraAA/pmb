@@ -94,14 +94,14 @@
 		<div class="row">
 			<div class="col-md-6">
 					<?php if (isset($_GET['page'])): ?>
-						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=<?= $_GET['page'] - 1 ?>">&lt; Previous</a>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/admin.php?page=<?= $_GET['page'] - 1 ?>">&lt; Previous</a>
 					<?php endif; ?>
 			</div>
 			<div class="col-md-6">
 					<?php if (isset($_GET['page']) && $_GET['page'] != 1): ?>
-						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/admin.php?page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
 					<?php else: ?>
-						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=2">Next &gt;</a>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/admin.php?page=2">Next &gt;</a>
 					<?php endif; ?>
 			</div>
 		</div>
