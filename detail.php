@@ -1,5 +1,5 @@
 <?php  
-	if (empty($_GET['nim']) && !isset($_SESSION['role'])) {
+	if (empty($_GET['nim']) || !isset($_SESSION['role'])) {
 		header("Location: index.php");
 		exit;
 	}
