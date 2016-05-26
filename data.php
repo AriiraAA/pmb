@@ -150,7 +150,7 @@
 		    <tr>
 		    	<td>{{ $index + 1 }}</td>
 		    	<td>
-		    		<a href="detail.php?nim={{ maba.nim }}">{{ maba.nama }}</a>
+		    		{{ maba.nama }}
 		    	</td>
 		    	<td>
 		    		{{ maba.nim }}
