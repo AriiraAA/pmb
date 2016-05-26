@@ -31,7 +31,7 @@
 	
 	<center style="margin-top: 6%; margin-bottom: 3%;">
 		<h1>Data Mahasiswa Baru Universitas Sriwijaya</h1>
-		<h1><?= $_SERVER['REQUEST_URI'] ?></h1>
+		<h1><?= $_SERVER['QUERY_STRING'] ?></h1>
 	</center>
 	<div class="container">
 		<div class="row">
