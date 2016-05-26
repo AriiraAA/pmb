@@ -16,14 +16,6 @@
 		$_SESSION['page'] = 1;
 	}
 
-	require_once "connect.php";
-	$query = mysqli_query($connection, "SELECT nim FROM maba");
-	$files = array();
-	while ($row = mysqli_fetch_array($query)) {
-		$files []= $row['nim'].".png";
-	}
-	$i = 0;
-
 	$query_string = preg_split("/(=|&)/" ,$_SERVER['QUERY_STRING']);
 
 	

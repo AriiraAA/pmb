@@ -8,6 +8,12 @@
 		$nama	= $_SESSION['nama'];
 		$role	= $_SESSION['role'];
 	}
+
+	if (isset($_GET['page'])) {
+		$_SESSION['page'] = $_GET['page'];
+	} else {
+		$_SESSION['page'] = 1;
+	}
 ?>
 
 <?php include "template/header.php"; ?>
@@ -85,6 +91,20 @@
 		    </tr>
 		  </tbody>
 		</table>
+		<div class="row">
+			<div class="col-md-6">
+					<?php if (isset($_GET['page'])): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=<?= $_GET['page'] - 1 ?>">&lt; Previous</a>
+					<?php endif; ?>
+			</div>
+			<div class="col-md-6">
+					<?php if (isset($_GET['page']) && $_GET['page'] != 1): ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=<?= $_GET['page'] + 1 ?>">Next &gt;</a>
+					<?php else: ?>
+						<a class="pull-left" href="http://pmbunsri.azurewebsites.net/data.php?page=2">Next &gt;</a>
+					<?php endif; ?>
+			</div>
+		</div>
 	</div>
 
 	<?php include "template/footer.php"; ?>

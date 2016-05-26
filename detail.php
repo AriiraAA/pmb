@@ -311,7 +311,7 @@
 		</div>
 	</div>
 	<center>
-		<button onclick="window.history.back();"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
+		<button class="btn btn-danger" onclick="window.history.back();"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
 	</center>
 
 
