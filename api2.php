@@ -28,15 +28,15 @@
 
 	if ($_SESSION['role'] == "Super Admin") {
 		if (isset($_SESSION['page']) && $_SESSION['page'] != 1) {
-			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba LIMIT ".(string)(($_SESSION['page'] - 1) * 60).", 60");
+			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook FROM maba LIMIT ".(string)(($_SESSION['page'] - 1) * 60).", 60");
 		} else {
-			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba LIMIT 0, 60");
+			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook FROM maba LIMIT 0, 60");
 		}		
 	} else {
 		if (isset($_SESSION['page']) && $_SESSION['page'] != 1) {
-			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='".$fakultas."' LIMIT ".(string)(($_SESSION['page'] - 1) * 60).", 60");
+			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook FROM maba WHERE fakultas='".$fakultas."' LIMIT ".(string)(($_SESSION['page'] - 1) * 60).", 60");
 		} else {
-			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, golongan_darah, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook, twitter, id_line, instagram, pin_bbm FROM maba WHERE fakultas='".$fakultas."' LIMIT 0, 60");
+			$query = mysqli_query($connection, "SELECT nim, nama, fakultas, jurusan, ukt, agama, riwayat_pendidikan, tahun_pendidikan, riwayat_prestasi, pemberi_prestasi, tahun_prestasi, tempat_lahir, tanggal_lahir, alamat_asal, alamat_sekarang, no_hp, facebook FROM maba WHERE fakultas='".$fakultas."' LIMIT 0, 60");
 		}	
 	}
 
