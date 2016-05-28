@@ -258,7 +258,7 @@
 			exit;
 		}
 
-		echo "hahahaha";
+		echo $jabatan_organisasi;
 		exit;
 
 
