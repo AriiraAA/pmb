@@ -408,8 +408,8 @@
 					    	<input class="form-control" type="text" name="tokoh_idola" value="<?= $tokoh_idola ?>">
 					    </div>
 					    <div class="form-group">
-					    	<label for="skill">Bacaan Favorit</label>
-					    	<input class="form-control" type="text" name="motto" value="<?= $motto ?>">
+					    	<label for="bacaan_favorit">Bacaan Favorit</label>
+					    	<input class="form-control" type="text" name="bacaan_favorit" value="<?= $bacaan_favorit ?>">
 					    </div>
 					    <div class="form-group">
 					    	<label for="blog">Blog</label>
@@ -565,7 +565,7 @@
 					  </div>
 					</div>
 				</div>
-			
+			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="panel panel-primary">
