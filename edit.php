@@ -18,6 +18,8 @@
 			$password 				= $row['password'];
 			$nama 					= $row['nama'];
 			$jenis_kelamin			= $row['jenis_kelamin'];
+			$golongan_darah			= $row['golongan_darah'];
+			$riwayat_penyakit		= $row['riwayat_penyakit'];
 			$jurusan				= $row['jurusan'];
 			$fakultas				= $row['fakultas'];
 			$ukt					= $row['ukt'];
@@ -26,8 +28,14 @@
 			$tanggal_lahir			= $row['tanggal_lahir'];
 			$alamat_asal			= $row['alamat_asal'];
 			$alamat_sekarang		= $row['alamat_sekarang'];
+			$alamat_domisili		= $row['alamat_domisili'];
 			$asal_daerah			= $row['asal_daerah'];
+			$hobi					= $row['hobi'];
 			$skill 					= $row['skill'];
+			$cita_cita				= $row['cita_cita'];
+			$motto					= $row['motto'];
+			$tokoh_idola			= $row['tokoh_idola'];
+			$bacaan_favorit			= $row['bacaan_favorit'];
 			$nama_ayah				= $row['nama_ayah'];
 			$alamat_ayah			= $row['alamat_ayah'];
 			$pekerjaan_ayah			= $row['pekerjaan_ayah'];
@@ -39,19 +47,26 @@
 			$penghasilan_ibu		= $row['penghasilan_ibu'];
 			$no_hp_ibu				= $row['no_hp_ibu'];
 			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
+			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
 			$no_hp					= $row['no_hp'];
 			$email 					= $row['email'];
 			$facebook				= $row['facebook'];
+			$line					= $row['line'];
+			$pin_bb					= $row['pin_bb'];
+			$blog 					= $row['blog'];
 			$isu 					= $row['isu'];
-			$anak_ke 				= explode(',', $row['anak_ke']);
-			$riwayat_pendidikan		= explode(',', $row['riwayat_pendidikan']);
-			$tahun_pendidikan		= explode(',', $row['tahun_pendidikan']);
-			$riwayat_prestasi		= explode(',', $row['riwayat_prestasi']);
-			$pemberi_prestasi		= explode(',', $row['pemberi_prestasi']);
-			$tahun_prestasi			= explode(',', $row['tahun_prestasi']);
-			$riwayat_organisasi		= explode(',', $row['riwayat_organisasi']);
-			$tahun_organisasi		= explode(',', $row['tahun_organisasi']);
-			$jabatan_organisasi		= explode(',', $row['jabatan_organisasi']);
+			$anak_ke 							= explode(',', $row['anak_ke']);
+			$riwayat_pendidikan					= explode(',', $row['riwayat_pendidikan']);
+			$tahun_pendidikan					= explode(',', $row['tahun_pendidikan']);
+			$riwayat_pendidikan_nonformal		= explode(',', $row['riwayat_pendidikan_nonformal']);
+			$tahun_pendidikan_nonformal			= explode(',', $row['tahun_pendidikan_nonformal']);
+			$riwayat_prestasi					= explode(',', $row['riwayat_prestasi']);
+			$tingkat_prestasi					= explode(',', $row['tingkat_prestasi']);
+			$pemberi_prestasi					= explode(',', $row['pemberi_prestasi']);
+			$tahun_prestasi						= explode(',', $row['tahun_prestasi']);
+			$riwayat_organisasi					= explode(',', $row['riwayat_organisasi']);
+			$tahun_organisasi					= explode(',', $row['tahun_organisasi']);
+			$jabatan_organisasi					= explode(',', $row['jabatan_organisasi']);
 		}
 	}
 ?>
@@ -128,6 +143,101 @@
 						    		Perempuan
 						    	</label>
 					    	<?php endif; ?>
+					    </div>
+					    <div class="form-group">
+					    	<div>
+					    		<label for="golongan_darah">Golongan Darah</label>	
+					    	</div>
+					    	<?php if ($golongan_darah == "A"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="A" checked>
+						    		A
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="B">
+						    		B
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="AB">
+						    		AB
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="O">
+						    		O
+						    	</label>
+						    <?php elseif ($golongan_darah == "B"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="A">
+						    		A
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="B" checked>
+						    		B
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="AB">
+						    		AB
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="O">
+						    		O
+						    	</label>
+						    <?php elseif ($golongan_darah == "AB"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="A">
+						    		A
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="B">
+						    		B
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="AB" checked>
+						    		AB
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="O">
+						    		O
+						    	</label>
+						    <?php elseif ($golongan_darah == "O"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="A">
+						    		A
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="B">
+						    		B
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="AB">
+						    		AB
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="O" checked>
+						    		O
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="A">
+						    		A
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="B">
+						    		B
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="AB">
+						    		AB
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="golongan_darah" value="O">
+						    		O
+						    	</label>
+					    	<?php endif; ?>
+					    </div>
+					    <div class="form-group">
+					    	<label for="riwayat_penyakit">Riwayat Penyakit</label>
+					    	<input class="form-control" type="text" name="riwayat_penyakit" value="<?= $riwayat_penyakit ?>">
 					    </div>
 					    <div class="form-group">
 					    	<label for="fakultas">Fakultas</label>
@@ -246,7 +356,7 @@
 							</select>
 					    </div>
 					    <div class="form-group">
-					    	<label for="jurusan">Jurusan</label>
+					    	<label for="jurusan">Jurusan / Prodi</label>
 					    	<input class="form-control" type="text" name="jurusan" value="<?= $jurusan ?>">
 					    </div>
 					    <div class="form-group">
@@ -277,9 +387,33 @@
 					    	<label for="asal_daerah">Asal Daerah</label>
 					    	<input class="form-control" type="text" name="asal_daerah" value="<?= $asal_daerah ?>">
 					    </div>
+					    </div><div class="form-group">
+					    	<label for="hobi">Hobi</label>
+					    	<input class="form-control" type="text" name="hobi" value="<?= $hobi ?>">
+					    </div>
 					    <div class="form-group">
 					    	<label for="skill">Skill</label>
 					    	<input class="form-control" type="text" name="skill" value="<?= $skill ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="cita_cita">Cita-cita</label>
+					    	<input class="form-control" type="text" name="cita_cita" value="<?= $cita_cita ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="motto">Motto</label>
+					    	<input class="form-control" type="text" name="motto" value="<?= $motto ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="tokoh_idola">Tokoh Idola</label>
+					    	<input class="form-control" type="text" name="tokoh_idola" value="<?= $tokoh_idola ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="skill">Bacaan Favorit</label>
+					    	<input class="form-control" type="text" name="motto" value="<?= $motto ?>">
+					    </div>
+					    <div class="form-group">
+					    	<label for="blog">Blog</label>
+					    	<input class="form-control" type="text" name="blog" value="<?= $blog ?>">
 					    </div>
 					  </div>
 					</div>
@@ -370,6 +504,64 @@
 							<label for="jumlah_tanggungan">Jumlah Tanggungan</label>
 							<input class="form-control" type="text" name="jumlah_tanggungan" value="<?= $jumlah_tanggungan ?>">
 						</div>
+						<div class="form-group">
+					    	<div>
+					    		<label for="kepemilikan_rumah">Kepemilikan Rumah</label>	
+					    	</div>
+					    	<?php if ($kepemilikan_rumah == "Milik Sendiri"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Milik Sendiri" checked>
+						    		Milik Sendiri
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Mengontrak">
+						    		Mengontrak
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Menumpang">
+						    		Menumpang
+						    	</label>
+						    <?php elseif ($kepemilikan_rumah == "Mengontrak"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Milik Sendiri">
+						    		Milik Sendiri
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Mengontrak" checked>
+						    		Mengontrak
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Menumpang">
+						    		Menumpang
+						    	</label>
+						    <?php elseif ($kepemilikan_rumah == "Menumpang"): ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Milik Sendiri">
+						    		Milik Sendiri
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Mengontrak">
+						    		Mengontrak
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Menumpang" checked>
+						    		Menumpang
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Milik Sendiri">
+						    		Milik Sendiri
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Mengontrak">
+						    		Mengontrak
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="kepemilikan_rumah" value="Menumpang">
+						    		Menumpang
+						    	</label>
+					    	<?php endif; ?>
+					    </div>
 					  </div>
 					</div>
 				</div>
@@ -400,6 +592,20 @@
 					    	<div class="input-group">
 					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
 					    		<input class="form-control" type="text" name="facebook" value="<?= $facebook ?>" />
+					    	</div>
+					    </div>
+					    <div class="form-group">
+					    	<label for="line">Line</label>
+					    	<div class="input-group">
+					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+					    		<input class="form-control" type="text" name="line" value="<?= $line ?>" />
+					    	</div>
+					    </div>
+					    <div class="form-group">
+					    	<label for="pin_bb">Pin BBM</label>
+					    	<div class="input-group">
+					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+					    		<input class="form-control" type="text" name="pin_bb" value="<?= $pin_bb ?>" />
 					    	</div>
 					    </div>
 					  </div>
@@ -572,6 +778,54 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-institution"></i> Riwayat Pendidikan Nonformal</h3>
+					    <span id="tambah_pendidikan_nonformal" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-plus"></i> Tambah</span>
+					  </div>
+					  <div class="panel-body">
+						<div id="pendidikan_nonformal_wrapper" class="riwayat_pendidikan_nonformal">
+							<?php
+								$jumlah_data_pendidikan_nonformal = count($riwayat_pendidikan_nonformal); 
+								if (count($riwayat_pendidikan_nonformal) > 0) {
+									for ($i = 0; $i < count($riwayat_pendidikan_nonformal); $i++) {
+										echo '<div class="panel panel-default">
+												<div class="panel-body">
+													<div class="row">
+										  				<div class="col-md-6">
+													  		<label for="prestasi">Nama Lembaga</label>
+													  		<input class="form-control" type="text" name="riwayat_pendidikan_nonformal[' . $i . ']" value="'.$riwayat_pendidikan_nonformal[$i].'" />
+													  	</div>
+													  	<div class="col-md-6">
+													  		<label for="tahun">Tahun Keanggotaan</label>
+													  		<input class="form-control" type="text" name="tahun_pendidikan_nonformal[' . $i . ']" value="'.$tahun_pendidikan_nonformal[$i].'"/>
+													  	</div>
+										  			</div>
+										  		</div>
+										  	</div>';
+									}
+								} else {
+									echo '<div class="panel panel-default">
+												<div class="panel-body">
+											<div class="row">
+								  				<div class="col-md-6">
+											  		<label for="prestasi">Nama Lembaga</label>
+											  		<input class="form-control" type="text" name="riwayat_pendidikan_nonformal[0]"/>
+											  	</div>
+											  	<div class="col-md-6">
+											  		<label for="tahun">Tahun Keanggotaan</label>
+											  		<input class="form-control" type="text" name="tahun_pendidikan_nonformal[0]"/>
+											  	</div>
+								  			</div>
+								  		</div>
+									</div>';
+								}
+							?>
+						</div>
+					  </div>
+					</div>
+				</div>
 				<div class="col-md-6">
 					<div class="panel panel-primary">
 					  <div class="panel-heading">
@@ -774,6 +1028,25 @@
   			'</div>' +
   			'</div>');
 			k++;
+		});
+
+		var l = <?= $jumlah_data_pendidikan_nonformal ?>;
+		$("#tambah_pendidikan_nonformal").click(function() {
+			$("#pendidikan_nonformal_wrapper").append('<div class="panel panel-default">' +
+				'<div class="panel-body">' +
+					'<div class="row">' +
+		  				'<div class="col-md-6">' +
+					  		'<label for="prestasi">Nama Lembaga</label>' +
+					  		'<input class="form-control" type="text" name="riwayat_pendidikan_nonformal[' + l + ']" />' +
+					  	'</div>' +
+					  	'<div class="col-md-6">' +
+					  		'<label for="tahun">Tahun Keanggotaan</label>' +
+					  		'<input class="form-control" type="text" name="tahun_pendidikan_nonformal[' + l + ']" />' +
+					  	'</div>' +
+		  			'</div>' +
+		  		'</div>' +
+		  	'</div>');
+			l++;
 		});
 	  </script>
 
