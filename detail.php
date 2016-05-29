@@ -9,43 +9,58 @@
 	$query = mysqli_query($connection, "SELECT * FROM maba WHERE nim='".$_GET['nim']."'");
 	while ($row = mysqli_fetch_array($query)) {
 		$nim 					= $row['nim'];
-		$password 				= $row['password'];
-		$nama 					= $row['nama'];
-		$jenis_kelamin			= $row['jenis_kelamin'];
-		$jurusan				= $row['jurusan'];
-		$fakultas				= $row['fakultas'];
-		$ukt					= $row['ukt'];
-		$agama					= $row['agama'];
-		$tempat_lahir			= $row['tempat_lahir'];
-		$tanggal_lahir			= $row['tanggal_lahir'];
-		$alamat_asal			= $row['alamat_asal'];
-		$alamat_sekarang		= $row['alamat_sekarang'];
-		$asal_daerah			= $row['asal_daerah'];
-		$skill 					= $row['skill'];
-		$nama_ayah				= $row['nama_ayah'];
-		$alamat_ayah			= $row['alamat_ayah'];
-		$pekerjaan_ayah			= $row['pekerjaan_ayah'];
-		$penghasilan_ayah		= $row['penghasilan_ayah'];
-		$no_hp_ayah				= $row['no_hp_ayah'];
-		$nama_ibu				= $row['nama_ibu'];
-		$alamat_ibu				= $row['alamat_ibu'];
-		$pekerjaan_ibu			= $row['pekerjaan_ibu'];
-		$penghasilan_ibu		= $row['penghasilan_ibu'];
-		$no_hp_ibu				= $row['no_hp_ibu'];
-		$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
-		$no_hp					= $row['no_hp'];
-		$email 					= $row['email'];
-		$facebook				= $row['facebook'];
-		$isu 					= $row['isu'];
-		$anak_ke 				= explode(',', $row['anak_ke']);
-		$riwayat_pendidikan		= explode(',', $row['riwayat_pendidikan']);
-		$tahun_pendidikan		= explode(',', $row['tahun_pendidikan']);
-		$riwayat_prestasi		= explode(',', $row['riwayat_prestasi']);
-		$pemberi_prestasi		= explode(',', $row['pemberi_prestasi']);
-		$tahun_prestasi			= explode(',', $row['tahun_prestasi']);
-		$riwayat_organisasi		= explode(',', $row['riwayat_organisasi']);
-		$tahun_organisasi		= explode(',', $row['tahun_organisasi']);
-		$jabatan_organisasi		= explode(',', $row['jabatan_organisasi']);
+			$password 				= $row['password'];
+			$nama 					= $row['nama'];
+			$jenis_kelamin			= $row['jenis_kelamin'];
+			$golongan_darah			= $row['golongan_darah'];
+			$riwayat_penyakit		= $row['riwayat_penyakit'];
+			$jurusan				= $row['jurusan'];
+			$fakultas				= $row['fakultas'];
+			$ukt					= $row['ukt'];
+			$agama					= $row['agama'];
+			$tempat_lahir			= $row['tempat_lahir'];
+			$tanggal_lahir			= $row['tanggal_lahir'];
+			$alamat_asal			= $row['alamat_asal'];
+			$alamat_sekarang		= $row['alamat_sekarang'];
+			$alamat_domisili		= $row['alamat_domisili'];
+			$asal_daerah			= $row['asal_daerah'];
+			$hobi					= $row['hobi'];
+			$skill 					= $row['skill'];
+			$cita_cita				= $row['cita_cita'];
+			$motto					= $row['motto'];
+			$tokoh_idola			= $row['tokoh_idola'];
+			$bacaan_favorit			= $row['bacaan_favorit'];
+			$nama_ayah				= $row['nama_ayah'];
+			$alamat_ayah			= $row['alamat_ayah'];
+			$pekerjaan_ayah			= $row['pekerjaan_ayah'];
+			$penghasilan_ayah		= $row['penghasilan_ayah'];
+			$no_hp_ayah				= $row['no_hp_ayah'];
+			$nama_ibu				= $row['nama_ibu'];
+			$alamat_ibu				= $row['alamat_ibu'];
+			$pekerjaan_ibu			= $row['pekerjaan_ibu'];
+			$penghasilan_ibu		= $row['penghasilan_ibu'];
+			$no_hp_ibu				= $row['no_hp_ibu'];
+			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
+			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
+			$no_hp					= $row['no_hp'];
+			$email 					= $row['email'];
+			$facebook				= $row['facebook'];
+			$line					= $row['line'];
+			$pin_bb					= $row['pin_bb'];
+			$blog 					= $row['blog'];
+			$isu 					= $row['isu'];
+			$anak_ke 							= explode(',', $row['anak_ke']);
+			$riwayat_pendidikan					= explode(',', $row['riwayat_pendidikan']);
+			$tahun_pendidikan					= explode(',', $row['tahun_pendidikan']);
+			$riwayat_pendidikan_nonformal		= explode(',', $row['riwayat_pendidikan_nonformal']);
+			$tahun_pendidikan_nonformal			= explode(',', $row['tahun_pendidikan_nonformal']);
+			$riwayat_prestasi					= explode(',', $row['riwayat_prestasi']);
+			$tingkat_prestasi					= explode(',', $row['tingkat_prestasi']);
+			$pemberi_prestasi					= explode(',', $row['pemberi_prestasi']);
+			$tahun_prestasi						= explode(',', $row['tahun_prestasi']);
+			$riwayat_organisasi					= explode(',', $row['riwayat_organisasi']);
+			$tahun_organisasi					= explode(',', $row['tahun_organisasi']);
+			$jabatan_organisasi					= explode(',', $row['jabatan_organisasi']);
 	}
 ?>
 
@@ -80,12 +95,20 @@
 				    		<td><?= $fakultas ?></td>
 				    	</tr>
 				    	<tr>
-				    		<td><b>Jurusan</b></td>
+				    		<td><b>Jurusan / Prodi</b></td>
 				    		<td><?= $jurusan ?></td>
 				    	</tr>
 				    	<tr>
 				    		<td><b>Jenis Kelamin</b></td>
 				    		<td><?= $jenis_kelamin ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Golongan Darah</b></td>
+				    		<td><?= $golongan_darah ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Riwayat Penyakit</b></td>
+				    		<td><?= $riwayat_penyakit ?></td>
 				    	</tr>
 				    	<tr>
 				    		<td><b>UKT</b></td>
@@ -116,8 +139,32 @@
 				    		<td><?= $asal_daerah ?></td>
 				    	</tr>
 				    	<tr>
+				    		<td><b>Hobi</b></td>
+				    		<td><?= $hobi ?></td>
+				    	</tr>
+				    	<tr>
 				    		<td><b>Skill</b></td>
 				    		<td><?= $skill ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Cita-cita</b></td>
+				    		<td><?= $cita_cita ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Motto</b></td>
+				    		<td><?= $motto ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Tokoh Idola</b></td>
+				    		<td><?= $tokoh_idola ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Bacaan Favorit</b></td>
+				    		<td><?= $bacaan_favorit ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Blog</b></td>
+				    		<td><?= $blog ?></td>
 				    	</tr>
 				    </table>
 				  </div>
@@ -131,28 +178,28 @@
 				  <div class="panel-body">
 				    <div class="panel panel-info">
 					  <div class="panel-heading">
-					    <h3 class="panel-title">Data Ayah</h3>
+					    <h3 class="panel-title">Data Ayah / Wali</h3>
 					  </div>
 					  <div class="panel-body">
 					    <table class="table">
 					    	<tr>
-					    		<td><b>Nama Ayah</b></td>
+					    		<td><b>Nama Ayah / Wali</b></td>
 					    		<td><?= $nama_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Alamat Ayah</b></td>
+					    		<td><b>Alamat Ayah / Wali</b></td>
 					    		<td><?= $alamat_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Pekerjaan Ayah</b></td>
+					    		<td><b>Pekerjaan Ayah / Wali</b></td>
 					    		<td><?= $pekerjaan_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Penghasilan Ayah</b></td>
+					    		<td><b>Penghasilan Ayah / Wali</b></td>
 					    		<td><?= 'Rp. ' . number_format( $penghasilan_ayah, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>No HP Ayah</b></td>
+					    		<td><b>No HP Ayah / Wali</b></td>
 					    		<td><?= $no_hp_ayah ?></td>
 					    	</tr>
 					    </table>
@@ -160,28 +207,28 @@
 					</div>
 					<div class="panel panel-info">
 					  <div class="panel-heading">
-					    <h3 class="panel-title">Data Ibu</h3>
+					    <h3 class="panel-title">Data Ibu / Wali</h3>
 					  </div>
 					  <div class="panel-body">
 					    <table class="table">
 					    	<tr>
-					    		<td><b>Nama Ibu</b></td>
+					    		<td><b>Nama Ibu / Wali</b></td>
 					    		<td><?= $nama_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Alamat Ibu</b></td>
+					    		<td><b>Alamat Ibu / Wali</b></td>
 					    		<td><?= $alamat_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Pekerjaan Ibu</b></td>
+					    		<td><b>Pekerjaan Ibu / Wali</b></td>
 					    		<td><?= $pekerjaan_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Penghasilan Ibu</b></td>
-					    		<td><<?= 'Rp. ' . number_format( $penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
+					    		<td><b>Penghasilan Ibu / Wali</b></td>
+					    		<td><<?= 'Rp. ' . number_format($penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>No HP Ibu</b></td>
+					    		<td><b>No HP Ibu / Wali</b></td>
 					    		<td><?= $no_hp_ibu ?></td>
 					    	</tr>
 					    </table>
@@ -195,6 +242,10 @@
 						<tr>
 							<td><b>Jumlah Tanggungan</b></td>
 							<td><?= $jumlah_tanggungan ?></td>
+						</tr>
+						<tr>
+							<td><b>Kepemilikan Rumah</b></td>
+							<td><?= $kepemilikan_rumah ?></td>
 						</tr>
 					</table>
 				  </div>
@@ -220,6 +271,14 @@
 				    	<tr>
 				    		<td><b>Facebook</b></td>
 				    		<td><?= $facebook ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Line</b></td>
+				    		<td><?= $line ?></td>
+				    	</tr>
+				    	<tr>
+				    		<td><b>Pin BBM</b></td>
+				    		<td><?= $pin_bb ?></td>
 				    	</tr>
 				    </table>
 				  </div>
@@ -284,12 +343,13 @@
 			<div class="col-md-6">
 				<div class="panel panel-primary">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><i class="fa fa-archive"></i> Riwayat Organisasi</h3>
+				    <h3 class="panel-title"><i class="fa fa-archive"></i> Riwayat Prestasi</h3>
 				  </div>
 				  <div class="panel-body">
 				    <table class="table">
 				  		<thead>
 				  			<th>Nama Prestasi</th>
+				  			<th>Tingkat</th>
 				  			<th>Instansi Pemberi</th>
 				  			<th>Tahun</th>
 				  		</thead>
@@ -299,8 +359,37 @@
 						    	foreach ($riwayat_prestasi as $pres) {
 						    		echo '<tr>
 						    				<td>'.$riwayat_prestasi[$i].'</td>
+						    				<td>'.$tingkat_prestasi[$i].'</td>
 						    				<td>'.$pemberi_prestasi[$i].'</td>
 						    				<td>'.$tahun_prestasi[$i++].'</td>
+						    			</tr>';
+						    	}
+						    ?>
+				  		</tbody>
+				  	</table>
+				  </div>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><i class="fa fa-institution"></i> Riwayat Pendidikan Nonformal</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<table class="table">
+				  		<thead>
+				  			<th>Nama Lembaga</th>
+				  			<th>Tahun Keanggotaan</th>
+				  		</thead>
+				  		<tbody>
+				  			<?php
+						    	$i = 0; 
+						    	foreach ($riwayat_pendidikan_nonformal as $pend) {
+						    		echo '<tr>
+						    				<td>'.$riwayat_pendidikan_nonformal[$i].'</td>
+						    				<td>'.$tahun_pendidikan_nonformal[$i++].'</td>
 						    			</tr>';
 						    	}
 						    ?>
