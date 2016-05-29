@@ -236,8 +236,8 @@
 					    	<?php endif; ?>
 					    </div>
 					    <div class="form-group">
-					    	<label for="nim">NIM</label>
-					    	<input class="form-control" type="text" name="nim" value="<?= $nim ?>">
+					    	<label for="riwayat_penyakit">Riwayat Penyakit</label>
+					    	<input class="form-control" type="text" name="riwayat_penyakit" value="<?= $riwayat_penyakit ?>">
 					    </div>
 					    <div class="form-group">
 					    	<label for="fakultas">Fakultas</label>

@@ -33,6 +33,12 @@
 			$jenis_kelamin = '';
 		}
 
+		if (!empty($_POST['golongan_darah'])) {
+			$golongan_darah = $_POST['golongan_darah'];
+		} else {
+			$golongan_darah = '';
+		}
+
 		if (!empty($_POST['fakultas'])) {
 			$fakultas = $_POST['fakultas'];
 		} else {
