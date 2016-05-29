@@ -13,6 +13,9 @@
 	<?php include "template/navbar.php"; ?>
 
 	<div class="container">
+		<center>
+			<h1>Ubah Password</h1>
+		</center>
 		<form action="edit_profile.php" method="POST" style="width: 55%; margin: 0 auto;">
 			<?php if (isset($_SESSION['status']) && $_SESSION['status'] == "Success"): ?>
 				<div style="margin: 0 auto;" class="alert alert-success">
