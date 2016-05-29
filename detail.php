@@ -225,7 +225,7 @@
 					    	</tr>
 					    	<tr>
 					    		<td><b>Penghasilan Ibu / Wali</b></td>
-					    		<td><<?= 'Rp. ' . number_format($penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
+					    		<td><?= 'Rp. ' . number_format($penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
 					    		<td><b>No HP Ibu / Wali</b></td>
