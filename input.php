@@ -114,7 +114,7 @@
   			'<option value="Proteksi Tanaman">Proteksi Tanaman</option>' +
   			'<option value="Agronomi">Agronomi</option>' +
   			'<option value="Teknik Pertanian">Teknik Pertanian</option>' +
-  			'<option value="Budidaya Pertanian">Budidaya Pertanian</option>' +
+  			'<option value="Budidaya Perairan">Budidaya Perairan</option>' +
   			'<option value="Teknologi Hasil Perikanan">Teknologi Hasil Perikanan</option>' +
   			'<option value="Peternakan">Peternakan</option>' +
   			'<option value="Teknologi Hasil Pertanian">Teknologi Hasil Pertanian</option>');
