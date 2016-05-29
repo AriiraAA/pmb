@@ -101,71 +101,75 @@
   			'<option value="Teknik Informatika (S1 Bilingual)">Teknik Informatika (S1 Bilingual)</option>');
   			} else if (fakultas === 'Ekonomi') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Manajemen">Manajemen</option>' +
   			'<option value="Akuntansi">Akuntansi</option>' +
+  			'<option value="Manajemen">Manajemen</option>' +
   			'<option value="Ekonomi Pembangunan">Ekonomi Pembangunan</option>' +
-  			'<option value="Magister Manajemen">Magister Manajemen</option>');
+  			'<option value="D3 Akutansi">D3 Akutansi</option>' +
+  			'<option value="D3 Kesekretariatan">D3 Kesekretariatan</option>');
   			} else if (fakultas === 'Pertanian') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Ilmu Tanah">Ilmu Tanah</option>' +
-  			'<option value="Teknik Pertanian">Teknik Pertanian</option>' +
-  			'<option value="Teknologi Hasil Perikanan">Teknologi Hasil Perikanan</option>' +
-  			'<option value="Peternakan">Peternakan</option>' +
-  			'<option value="Teknologi Hasil Pertanian">Teknologi Hasil Pertanian</option>' +
   			'<option value="Agroekoteknologi">Agroekoteknologi</option>' +
   			'<option value="Agribisnis">Agribisnis</option>' +
-  			'<option value="Budidaya Perairan">Budidaya Perairan</option>');
+  			'<option value="Ilmu Tanah">Ilmu Tanah</option>' +
+  			'<option value="Proteksi Tanaman">Proteksi Tanaman</option>' +
+  			'<option value="Agronomi">Agronomi</option>' +
+  			'<option value="Teknik Pertanian">Teknik Pertanian</option>' +
+  			'<option value="Budidaya Pertanian">Budidaya Pertanian</option>' +
+  			'<option value="Teknologi Hasil Perikanan">Teknologi Hasil Perikanan</option>' +
+  			'<option value="Peternakan">Peternakan</option>' +
+  			'<option value="Teknologi Hasil Pertanian">Teknologi Hasil Pertanian</option>');
   			} else if (fakultas === 'Kedokteran') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Teknik Gigi">Teknik Gigi</option>' +
-  			'<option value="Kedokteran Gigi">Kedokteran Gigi</option>' +
-  			'<option value="Ilmu Kesehatan Masyarakat">Ilmu Kesehatan Masyarakat</option>' +
   			'<option value="Pendidikan Dokter">Pendidikan Dokter</option>' +
+  			'<option value="Kedokteran Gigi">Kedokteran Gigi</option>' +
+  			'<option value="Ilmu Keperawatan">Ilmu Keperawatan</option>' +  			
   			'<option value="Psikologi">Psikologi</option>');
   			} else if (fakultas === 'Ilmu Sosial dan Ilmu Politik') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Ilmu Komunikasi">Ilmu Komunikasi</option>' +
+  			'<option value="Ilmu Administrasi Negara">Ilmu Administrasi Negara</option>'+
   			'<option value="Sosiologi">Sosiologi</option>' +
-  			'<option value="Administrasi Negara">Administrasi Negara</option>');
+  			'<option value="Ilmu Komunikasi">Ilmu Komunikasi</option>' +
+  			'<option value="Ilmu Hubungan Internasional">Ilmu Hubungan Internasional</option>');
   			} else if (fakultas === 'Hukum') {
   				$("#jurusan").html('<option value=""></option>' +
   			'<option value="Ilmu Hukum">Ilmu Hukum</option>');
   			} else if (fakultas === 'Kesehatan Masyarakat') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Keselamatan dan Kesehatan Kerja">Keselamatan dan Kesehatan Kerja</option>');
+  			'<option value="Keselamatan dan Kesehatan Kerja">Ilmu Kesehatan Masyarakat</option>');
   			} else if (fakultas === 'Matematika dan Ilmu Pengetahuan Alam') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Farmasi">Farmasi</option>' +
-  			'<option value="Biologi">Biologi</option>' +
-  			'<option value="Kimia">Kimia</option>' +
+  			'<option value="Fisika">Fisika</option>' +
   			'<option value="Matematika">Matematika</option>' +
-  			'<option value="Ilmu Kelautan">Ilmu Kelautan</option>' +
-  			'<option value="Fisika">Fisika</option>');
+  			'<option value="Kimia">Kimia</option>' +
+  			'<option value="Biologi">Biologi</option>' +
+  			'<option value="Kelautan">Kelautan</option>' +
+  			'<option value="Farmasi">Farmasi</option>' );
   			} else if (fakultas === 'Keguruan dan Ilmu Pendidikan') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Pendidikan Jasmani dan Kesehatan">Pendidikan Jasmani dan Kesehatan</option>' +
-  			'<option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>' +
+  			'<option value="Pendidikan Teknik Mesin">Pendidikan Teknik Mesin</option>' +
+  			'<option value="Pendidikan Matematika">Pendidikan Matematika</option>' +
   			'<option value="Pendidikan Fisika">Pendidikan Fisika</option>' +
   			'<option value="Pendidikan Kimia">Pendidikan Kimia</option>' +
-  			'<option value="Pendidikan Sejarah">Pendidikan Sejarah</option>' +
-  			'<option value="Pendidikan Matematika">Pendidikan Matematika</option>' +
-  			'<option value="Pendidikan Teknik Mesin">Pendidikan Teknik Mesin</option>' +
-  			'<option value="Pendidikan Anak Usia Dini">Pendidikan Anak Usia Dini</option>' +
-  			'<option value="Pendidikan Guru Sekolah Dasar">Pendidikan Guru Sekolah Dasar</option>' +
+  			'<option value="Pendidikan Biologi">Pendidikan Biologi</option>' +
   			'<option value="Bimbingan Konseling">Bimbingan Konseling</option>' +
+  			'<option value="Pendidikan Sejarah">Pendidikan Sejarah</option>' +
+  			'<option value="Pendidikan Luar Sekolah">Pendidikan Luar Sekolah</option>' +
   			'<option value="Pendidikan Pancasila dan Kewarganegaraan">Pendidikan Pancasila dan Kewarganegaraan</option>' +
+  			'<option value="Pendidikan Guru Sekolah Dasar">Pendidikan Guru Sekolah Dasar</option>' +
+  			'<option value="Pendidikan Anak Usia Dini">Pendidikan Anak Usia Dini</option>' +
   			'<option value="Pendidikan Ekonomi">Pendidikan Ekonomi</option>' +
   			'<option value="Pendidikan Bahasa, Sastra, dan Seni">Pendidikan Bahasa, Sastra, dan Seni</option>' +
-  			'<option value="Pendidikan Biologi">Pendidikan Biologi</option>');
+  			'<option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>' +
+  			'<option value="Pendidikan Jasmani dan Kesehatan">Pendidikan Jasmani dan Kesehatan</option>');
   			} else if (fakultas === 'Teknik') {
   				$("#jurusan").html('<option value=""></option>' +
-  			'<option value="Teknik Geologi">Teknik Geologi</option>' +
-  			'<option value="Teknik Arsitektur">Teknik Arsitektur</option>' +
-  			'<option value="Teknik Elektro">Teknik Elektro</option>' +
-  			'<option value="Teknik Kimia">Teknik Kimia</option>' +
-  			'<option value="Teknik Mesin">Teknik Mesin</option>' +
+  			'<option value="Teknik Sipil">Teknik Sipil</option>' +
   			'<option value="Teknik Pertambangan">Teknik Pertambangan</option>' +
-  			'<option value="Teknik Sipil">Teknik Sipil</option>');
+  			'<option value="Teknik Kimia">Teknik Kimia</option>' +
+  			'<option value="Teknik Elektro">Teknik Elektro</option>' +
+  			'<option value="Teknik Mesin">Teknik Mesin</option>' +
+  			'<option value="Teknik Arsitektur">Teknik Arsitektur</option>' +
+  			'<option value="Teknik Geologi">Teknik Geologi</option>');
   			} else {
   				$("#jurusan").html('<option>Not Available</option>');
   			}
