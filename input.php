@@ -76,10 +76,6 @@
 	  			<label for="no_hp">No Hp <span class="required">*</span></label>
 	  			<input class="form-control" type="text" name="no_hp" />
 	  		</div>
-	  		<div class="form-group">
-	  			<label for="facebook">Facebook</label>
-	  			<input class="form-control" type="text" name="facebook">
-	  		</div>
 	  		<center>
 	  			<input class="btn btn-success" type="submit" value="Submit">
 	  		</center>
