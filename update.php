@@ -39,6 +39,12 @@
 			$golongan_darah = '';
 		}
 
+		if (!empty($_POST['riwayat_penyakit'])) {
+			$riwayat_penyakit = $_POST['riwayat_penyakit'];
+		} else {
+			$riwayat_penyakit = '';
+		}
+
 		if (!empty($_POST['fakultas'])) {
 			$fakultas = $_POST['fakultas'];
 		} else {
@@ -93,10 +99,46 @@
 			$asal_daerah = '';
 		}
 
+		if (!empty($_POST['hobi'])) {
+			$hobi = $_POST['hobi'];
+		} else {
+			$hobi = '';
+		}
+
+		if (!empty($_POST['cita_cita'])) {
+			$cita_cita = $_POST['cita_cita'];
+		} else {
+			$cita_cita = '';
+		}
+
+		if (!empty($_POST['motto'])) {
+			$motto = $_POST['motto'];
+		} else {
+			$motto = '';
+		}
+
 		if (!empty($_POST['skill'])) {
 			$skill = $_POST['skill'];
 		} else {
 			$skill = '';
+		}
+
+		if (!empty($_POST['tokoh_idola'])) {
+			$tokoh_idola = $_POST['tokoh_idola'];
+		} else {
+			$tokoh_idola = '';
+		}
+
+		if (!empty($_POST['bacaan_favorit'])) {
+			$bacaan_favorit = $_POST['bacaan_favorit'];
+		} else {
+			$bacaan_favorit = '';
+		}
+
+		if (!empty($_POST['blog'])) {
+			$blog = $_POST['blog'];
+		} else {
+			$blog = '';
 		}
 
 		if (!empty($_POST['nama_ayah'])) {
@@ -172,6 +214,12 @@
 			$jumlah_tanggungan = '';
 		}
 
+		if (!empty($_POST['kepemilikan_rumah'])) {
+			$kepemilikan_rumah = $_POST['kepemilikan_rumah'];
+		} else {
+			$kepemilikan_rumah = '';
+		}
+
 		if (!empty($_POST['no_hp'])) {
 			$no_hp = $_POST['no_hp'];
 		} else {
@@ -188,6 +236,18 @@
 			$facebook = $_POST['facebook'];
 		} else {
 			$facebook = '';
+		}
+
+		if (!empty($_POST['line'])) {
+			$line = $_POST['line'];
+		} else {
+			$line = '';
+		}
+
+		if (!empty($_POST['pin_bb'])) {
+			$pin_bb = $_POST['pin_bb'];
+		} else {
+			$pin_bb = '';
 		}
 
 		if (isset($_POST['riwayat_pendidikan'])) {

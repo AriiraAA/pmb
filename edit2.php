@@ -61,6 +61,7 @@
 			$riwayat_pendidikan_nonformal		= explode(',', $row['riwayat_pendidikan_nonformal']);
 			$tahun_pendidikan_nonformal			= explode(',', $row['tahun_pendidikan_nonformal']);
 			$riwayat_prestasi					= explode(',', $row['riwayat_prestasi']);
+			$tingkat_prestasi					= explode(',', $row['tingkat_prestasi']);
 			$pemberi_prestasi					= explode(',', $row['pemberi_prestasi']);
 			$tahun_prestasi						= explode(',', $row['tahun_prestasi']);
 			$riwayat_organisasi					= explode(',', $row['riwayat_organisasi']);
@@ -386,6 +387,9 @@
 					    <div class="form-group">
 					    	<label for="asal_daerah">Asal Daerah</label>
 					    	<input class="form-control" type="text" name="asal_daerah" value="<?= $asal_daerah ?>">
+					    </div><div class="form-group">
+					    	<label for="hobi">Hobi</label>
+					    	<input class="form-control" type="text" name="hobi" value="<?= $hobi ?>">
 					    </div>
 					    <div class="form-group">
 					    	<label for="skill">Skill</label>
@@ -731,15 +735,19 @@
 										echo '<div class="panel panel-default">
 												<div class="panel-body">
 											<div class="row">
-								  				<div class="col-md-4">
+								  				<div class="col-md-3">
 											  		<label for="prestasi">Nama Prestasi</label>
 											  		<input class="form-control" type="text" name="riwayat_prestasi[' . $i . ']" value="'.$riwayat_prestasi[$i].'"/>
 											  	</div>
-											  	<div class="col-md-4">
+											  	<div class="col-md-3">
+											  		<label for="instansi">Tingkat Prestasi</label>
+											  		<input class="form-control" type="text" name="tingkat_prestasi[' . $i . ']" value="'.$tingkat_prestasi[$i].'"/>
+											  	</div>
+											  	<div class="col-md-3">
 											  		<label for="instansi">Tahun Prestasi</label>
 											  		<input class="form-control" type="text" name="tahun_prestasi[' . $i . ']" value="'.$tahun_prestasi[$i].'"/>
 											  	</div>
-											  	<div class="col-md-4">
+											  	<div class="col-md-3">
 											  		<label for="instansi">Instansi Pemberi</label>
 											  		<input class="form-control" type="text" name="pemberi_prestasi[' . $i . ']" value="'.$pemberi_prestasi[$i].'"/>
 											  	</div>
@@ -969,15 +977,19 @@
 			$("#wrapper").append('<div class="panel panel-default">' +
 					'<div class="panel-body">' +
 				'<div class="row">' +
-  				'<div class="col-md-4">' +
+  				'<div class="col-md-3">' +
 			  		'<label for="prestasi">Nama Prestasi</label>' +
 			  		'<input class="form-control" type="text" name="riwayat_prestasi[' + i + ']"/>' +
 			  	'</div>' +
-			  	'<div class="col-md-4">' +
+			  	'<div class="col-md-3">' +
+			  		'<label for="tingkat">Tingkat Prestasi</label>' +
+			  		'<input class="form-control" type="text" name="tingkat_prestasi[' + i + ']" />' +
+			  	'</div>' +
+			  	'<div class="col-md-3">' +
 			  		'<label for="tahun">Tahun Prestasi</label>' +
 			  		'<input class="form-control" type="text" name="tahun_prestasi[' + i + ']" />' +
 			  	'</div>' +
-			  	'<div class="col-md-4">' +
+			  	'<div class="col-md-3">' +
 			  		'<label for="instansi">Instansi Pemberi</label>' +
 			  		'<input class="form-control" type="text" name="pemberi_prestasi[' + i + ']"/>' +
 			  	'</div>' +
