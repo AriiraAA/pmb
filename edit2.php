@@ -597,14 +597,14 @@
 					    <div class="form-group">
 					    	<label for="line">Line</label>
 					    	<div class="input-group">
-					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+					    		<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
 					    		<input class="form-control" type="text" name="line" value="<?= $line ?>" />
 					    	</div>
 					    </div>
 					    <div class="form-group">
 					    	<label for="pin_bb">Pin BBM</label>
 					    	<div class="input-group">
-					    		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+					    		<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
 					    		<input class="form-control" type="text" name="pin_bb" value="<?= $pin_bb ?>" />
 					    	</div>
 					    </div>
