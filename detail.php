@@ -149,7 +149,7 @@
 					    	</tr>
 					    	<tr>
 					    		<td><b>Penghasilan Ayah</b></td>
-					    		<td><?= $penghasilan_ayah ?></td>
+					    		<td><?= 'Rp. ' . number_format( $penghasilan_ayah, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
 					    		<td><b>No HP Ayah</b></td>
@@ -178,7 +178,7 @@
 					    	</tr>
 					    	<tr>
 					    		<td><b>Penghasilan Ibu</b></td>
-					    		<td><?= $penghasilan_ibu ?></td>
+					    		<td><<?= 'Rp. ' . number_format( $penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
 					    		<td><b>No HP Ibu</b></td>
