@@ -387,7 +387,7 @@
 					    	<label for="asal_daerah">Asal Daerah</label>
 					    	<input class="form-control" type="text" name="asal_daerah" value="<?= $asal_daerah ?>">
 					    </div>
-					    </div><div class="form-group">
+					    <div class="form-group">
 					    	<label for="hobi">Hobi</label>
 					    	<input class="form-control" type="text" name="hobi" value="<?= $hobi ?>">
 					    </div>
