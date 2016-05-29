@@ -135,7 +135,11 @@
   			'<option value="Ilmu Hukum">Ilmu Hukum</option>');
   			} else if (fakultas === 'Kesehatan Masyarakat') {
   				$("#jurusan").html('<option value=""></option>' +
+<<<<<<< HEAD
   			'<option value="Ilmu Kesehatan Masyarakat">Ilmu Kesehatan Masyarakat</option>');
+=======
+  			'<option value="Keselamatan dan Kesehatan Kerja">Ilmu Kesehatan Masyarakat</option>');
+>>>>>>> 3ab74f295484ff0506b589b5765a75d624b3b99c
   			} else if (fakultas === 'Matematika dan Ilmu Pengetahuan Alam') {
   				$("#jurusan").html('<option value=""></option>' +
   			'<option value="Fisika">Fisika</option>' +
