@@ -54,7 +54,7 @@
 		<?php if ($role == "Super Admin"): ?>
 			<a class="btn btn-primary" href="admin_list.php"><i class="fa fa-users"></i> List Admin</a>
 		<?php endif; ?>
-			
+		<a class="btn btn-danger" href="edit_password.php">Ubah Password</a>	
 		<table class="table table-bordered" style="text-align: center; width: 90%; margin: 0 auto;">
 		  <thead>
 		    <tr><th>No</th>
