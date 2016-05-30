@@ -40,6 +40,9 @@
 			if (strlen($nim) > 0 && strlen($password) > 0 && strlen($nama) > 0 && strlen($jenis_kelamin) > 0 && strlen($golongan_darah) > 0 && strlen($jurusan) > 0 && strlen($fakultas) > 0 && strlen($ukt) > 0 && strlen($agama) > 0 && strlen($tempat_lahir) > 0 && strlen($tanggal_lahir) > 0 && strlen($alamat_asal) > 0 && strlen($alamat_sekarang) > 0 && strlen($asal_daerah) > 0 && strlen($hobi) > 0 && strlen($skill) > 0 && strlen($cita_cita) > 0 && strlen($motto) > 0 && strlen($tokoh_idola) > 0 && strlen($bacaan_favorit) > 0) {
 
 				$panel_pribadi_class = "panel-success";
+				echo '<script>
+						$("#panel_heading").append("<i class=\'fa fa-check-square\'></i> ");
+					</script>';
 
 			} else {
 				$panel_pribadi_class = "panel-primary";
@@ -102,10 +105,10 @@
 	  		</div>
 		<?php endif; ?>
 		<form action="update.php" method="POST" enctype="multipart/form-data">
-			<div class="row">
+			<div class="row">htd
 				<div class="col-md-6">
 					<div class="panel <?= $panel_pribadi_class ?>">
-					  <div class="panel-heading">
+					  <div class="panel-heading" id="panel_heading">
 					    <h3 class="panel-title"><i class="glyphicon glyphicon-user"></i> Data Pribadi</h3>
 					  </div>
 					  <div class="panel-body">
