@@ -57,6 +57,15 @@
 			$no_hp_ibu				= $row['no_hp_ibu'];
 			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
 			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
+
+			if (((strlen($nama_ayah) > 0 && strlen($alamat_ayah) > 0 && strlen($pekerjaan_ayah) > 0 && strlen($penghasilan_ayah) > 0 && strlen($no_hp_ayah) > 0) || (strlen($nama_ibu) > 0 && strlen($alamat_ibu) > 0 && strlen($pekerjaan_ibu) > 0 && strlen($penghasilan_ibu) > 0 && strlen($no_hp_ibu) > 0)) && strlen($jumlah_tanggungan) > 0 && strlen($kepemilikan_rumah) > 0) {
+
+				$panel_keluarga_class = "panel-success";
+
+			} else {
+				$panel_keluarga_class = "panel-primary";
+			}
+
 			$no_hp					= $row['no_hp'];
 			$email 					= $row['email'];
 			$facebook				= $row['facebook'];
@@ -428,7 +437,7 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					 <div class="panel panel-primary">
+					 <div class="panel <?= $panel_keluarga_class ?>">
 					  <div class="panel-heading">
 					    <h3 class="panel-title"><i class="fa fa-users"></i> Data Keluarga</h3>
 					  </div>
