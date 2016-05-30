@@ -66,8 +66,6 @@
 				$panel_keluarga_class = "panel-primary";
 			}
 
-			echo "<h1>" . (((strlen($nama_ayah) > 0 && strlen($alamat_ayah) > 0 && strlen($pekerjaan_ayah) > 0 && strlen($penghasilan_ayah) > 0 && strlen($no_hp_ayah) > 0) || (strlen($nama_ibu) > 0 && strlen($alamat_ibu) > 0 && strlen($pekerjaan_ibu) > 0 && strlen($penghasilan_ibu) > 0 && strlen($no_hp_ibu) > 0)) && strlen($jumlah_tanggungan) > 0 && strlen($kepemilikan_rumah) > 0). "</h1>";
-
 			$no_hp					= $row['no_hp'];
 			$email 					= $row['email'];
 			$facebook				= $row['facebook'];
