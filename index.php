@@ -28,6 +28,8 @@
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- -->
+
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
 
