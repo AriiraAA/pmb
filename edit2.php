@@ -41,7 +41,9 @@
 
 				$panel_pribadi_class = "panel-success";
 				$script = '<script>
-						$("#panel_heading").append("<i class=\'fa fa-check-square\'></i> ");
+						$(document).ready(function() {
+							$("#panel_heading").append("<i class=\'fa fa-check-square\'></i> ");
+						});
 					</script>';
 
 			} else {
