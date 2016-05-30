@@ -37,8 +37,8 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.css">
-    <script type="text/javascript" src="assets/js/chart.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="inc/TimeCircles.js"></script>
     <link rel="stylesheet" href="inc/TimeCircles.css" />
     <link rel="shortcut icon" href="logo/unsri.jpg">
