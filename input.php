@@ -41,19 +41,8 @@
 			</div>
 			<div class="form-group">
 		  		<label for="fakultas">Fakultas <span class="required">*</span></label>
-		  		<select class="form-control" name="fakultas" id="fakultas">
-		  			<option></option>
-		  			<option value="Kedokteran">Kedokteran</option>
-		  			<option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-		  			<option value="Teknik">Teknik</option>
-		  			<option value="Matematika dan Ilmu Pengetahuan Alam">Matematika dan Ilmu Pengetahuan Alam</option>
-		  			<option value="Pertanian">Pertanian</option>
-		  			<option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
-		  			<option value="Ilmu Komputer">Ilmu Komputer</option>
-		  			<option value="Ekonomi">Ekonomi</option>
-		  			<option value="Hukum">Hukum</option>
-		  			<option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
-		  		</select>
+		  		<div><?= $_SESSION['role'] ?></div>
+		  		<input id="fakultas" type="hidden" name="fakultas" value="<?= $_SESSION['role'] ?>">
 		  	</div>
 		  	<div class="form-group">
 		  		<label for="jurusan">Jurusan <span class="required">*</span></label>
@@ -83,7 +72,7 @@
 	</div>
 
 	  <script type="text/javascript">
-	  	$("#fakultas").on("change", function() {
+	  	//$("#fakultas").on("load", function() {
   			var fakultas = $("#fakultas").val();
 
   			if (fakultas === 'Ilmu Komputer') {
@@ -173,7 +162,7 @@
   			} else {
   				$("#jurusan").html('<option>Not Available</option>');
   			}
-  		});
+  		//});
 
 
 		var i = 1;

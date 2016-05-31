@@ -46,6 +46,13 @@
 			$pekerjaan_ibu			= $row['pekerjaan_ibu'];
 			$penghasilan_ibu		= $row['penghasilan_ibu'];
 			$no_hp_ibu				= $row['no_hp_ibu'];
+			$nama_wali				= $row['nama_wali'];
+			$alamat_wali			= $row['alamat_wali'];
+			$pekerjaan_wali			= $row['pekerjaan_wali'];
+			$penghasilan_wali		= $row['penghasilan_wali'];
+			$no_hp_wali				= $row['no_hp_wali'];
+			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
+			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
 			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
 			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
 			$no_hp					= $row['no_hp'];
@@ -55,6 +62,10 @@
 			$pin_bb					= $row['pin_bb'];
 			$blog 					= $row['blog'];
 			$isu 					= $row['isu'];
+			$keagamaan_pernah		= $row['keagamaan_pernah'];
+			$keagamaan_kapan		= $row['keagamaan_kapan'];
+			$keagamaan_vakum		= $row['keagamaan_vakum'];
+			$keagamaan_kajian		= $row['keagamaan_kajian'];
 			$anak_ke 							= explode(',', $row['anak_ke']);
 			$riwayat_pendidikan					= explode(',', $row['riwayat_pendidikan']);
 			$tahun_pendidikan					= explode(',', $row['tahun_pendidikan']);
@@ -478,6 +489,33 @@
 						    </div>
 						  </div>
 						</div>
+						<div class="panel panel-info">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Data Wali</h3>
+						  </div>
+						  <div class="panel-body">
+						    <div class="form-group">
+						    	<label for="nama_wali">Nama Wali</label>
+						    	<input class="form-control" type="text" name="nama_wali" value="<?= $nama_wali ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="alamat_wali">Alamat Wali</label>
+						    	<input class="form-control" type="text" name="alamat_wali" value="<?= $alamat_wali ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="pekerjaan_wali">Pekerjaan Wali</label>
+						    	<input class="form-control" type="text" name="pekerjaan_wali" value="<?= $pekerjaan_wali ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="penghasilan_wali">Penghasilan Wali (per bulan)</label>
+						    	<input class="form-control" type="text" name="penghasilan_wali" value="<?= $penghasilan_wali ?>">
+						    </div>
+						    <div class="form-group">
+						    	<label for="no_hp_wali">No HP Wali</label>
+						    	<input class="form-control" type="text" name="no_hp_wali" value="<?= $no_hp_wali ?>">
+						    </div>
+						  </div>
+						</div>
 						<label for="anak_ke">Anak Ke-</label>
 						<div class="form-inline">
 							<?php if (isset($anak_ke) && $anak_ke != ''): ?>
@@ -826,6 +864,165 @@
 					  </div>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title"><i class="fa fa-comments"></i> Riwayat Keagamaan</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="form-group">
+							<label for="keagamaan_pernah">Sudah pernah ikut kajian keislaman di sekolah?</label>
+					    	<?php if ($keagamaan_pernah == "Ya"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Ya" checked>
+						    		Ya
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Tidak">
+						    		Tidak
+						    	</label>
+						    <?php elseif ($keagamaan_pernah == "Tidak"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Ya">
+						    		Ya
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Tidak" checked>
+						    		Tidak
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Ya">
+						    		Ya
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_pernah" value="Tidak">
+						    		Tidak
+						    	</label>
+					    	<?php endif;  ?>
+						</div>
+						<div class="form-group">
+							<label for="keagamaan_kapan">Dimulai sejak kapan?</label>
+					    	<?php if ($keagamaan_kapan == "Kelas 1"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 1" checked>
+						    		Kelas 1
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 2">
+						    		Kelas 2
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 3">
+						    		Kelas 3
+						    	</label>
+						    <?php elseif ($keagamaan_kapan == "Kelas 2"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 1">
+						    		Kelas 1
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 2" checked>
+						    		Kelas 2
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 3">
+						    		Kelas 3
+						    	</label>
+						    <?php elseif ($keagamaan_kapan == "Kelas 3"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 1">
+						    		Kelas 1
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 2">
+						    		Kelas 2
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 3" checked>
+						    		Kelas 3
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 1">
+						    		Kelas 1
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 2">
+						    		Kelas 2
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kapan" value="Kelas 3">
+						    		Kelas 3
+						    	</label>
+					    	<?php endif; ?>
+						</div>
+						<div class="form-group">
+							<label for="keagamaan_vakum">Pernah vakum berapa lama? (jika tidak, kosongkan)</label>
+							<input class="form-control" type="text" name="keagamaan_vakum" value="<?= $keagamaan_vakum ?>" />
+						</div>
+						<div class="form-group">
+							<label for="keagamaan_kajian">Frekuensi kajian yang diikuti?</label>
+					    	<?php if ($keagamaan_kajian == "1 Minggu Sekali"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Minggu Sekali" checked>
+						    		1 Minggu Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Bulan Sekali">
+						    		1 Bulan Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Tahun Sekali">
+						    		1 Tahun Sekali
+						    	</label>
+						    <?php elseif ($keagamaan_kajian == "1 Bulan Sekali"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Minggu Sekali">
+						    		1 Minggu Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Bulan Sekali" checked>
+						    		1 Bulan Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Tahun Sekali">
+						    		1 Tahun Sekali
+						    	</label>
+						    <?php elseif ($keagamaan_kajian == "1 Tahun Sekali"): ?>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Minggu Sekali">
+						    		1 Minggu Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Bulan Sekali">
+						    		1 Bulan Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Tahun Sekali" checked>
+						    		1 Tahun Sekali
+						    	</label>
+						    <?php else: ?>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Minggu Sekali">
+						    		1 Minggu Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Bulan Sekali">
+						    		1 Bulan Sekali
+						    	</label>
+						    	<label class="radio-inline">
+						    		<input type="radio" name="keagamaan_kajian" value="1 Tahun Sekali">
+						    		1 Tahun Sekali
+						    	</label>
+					    	<?php endif; ?>
+					    	
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-6">
 					<div class="panel panel-primary">
 					  <div class="panel-heading">

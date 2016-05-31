@@ -37,13 +37,12 @@
 					<h4>Jurusan</h4>
 					<?php if ($_GET['fakultas'] == "kesmas"): ?>
 						<ul style="list-style: none">
-							<li><a href="data.php?fakultas=kesmas&jurusan=Kesehatan dan Keselamatan Kerja">Kesehatan dan Keselamatan Kerja</a></li>
+							<li><a href="data.php?fakultas=kesmas&jurusan=Ilmu Kesehatan Masyarakat">Ilmu Kesehatan Masyarakat</a></li>
 						</ul>
 					<?php elseif ($_GET['fakultas'] == "kedokteran"): ?>
 						<ul style="list-style: none">
-							<li><a href="data.php?fakultas=kedokteran&jurusan=Teknik Gigi">Teknik Gigi</a></li>
+							<li><a href="data.php?fakultas=kedokteran&jurusan=Ilmu Keperawatan">Ilmu Keperawatan</a></li>
 							<li><a href="data.php?fakultas=kedokteran&jurusan=Kedokteran Gigi">Kedokteran Gigi</a></li>
-							<li><a href="data.php?fakultas=kedokteran&jurusan=Ilmu Kesehatan Masyarakat">Ilmu Kesehatan Masyarakat</a></li>
 							<li><a href="data.php?fakultas=kedokteran&jurusan=Pendidikan Dokter">Pendidikan Dokter</a></li>
 							<li><a href="data.php?fakultas=kedokteran&jurusan=Psikologi">Psikologi</a></li>
 						</ul>
@@ -63,7 +62,7 @@
 							<li><a href="data.php?fakultas=mipa&jurusan=Biologi">Biologi</a></li>
 							<li><a href="data.php?fakultas=mipa&jurusan=Kimia">Kimia</a></li>
 							<li><a href="data.php?fakultas=mipa&jurusan=Matematika">Matematika</a></li>
-							<li><a href="data.php?fakultas=mipa&jurusan=Ilmu Kelautan">Ilmu Kelautan</a></li>
+							<li><a href="data.php?fakultas=mipa&jurusan=Kelautan">Kelautan</a></li>
 							<li><a href="data.php?fakultas=mipa&jurusan=Fisika">Fisika</a></li>
 						</ul>
 					<?php elseif ($_GET['fakultas'] == "pertanian"): ?>
@@ -76,6 +75,8 @@
 							<li><a href="data.php?fakultas=pertanian&jurusan=Agroekoteknologi">Agroekoteknologi</a></li>
 							<li><a href="data.php?fakultas=pertanian&jurusan=Agribisnis">Agribisnis</a></li>
 							<li><a href="data.php?fakultas=pertanian&jurusan=Budidaya Perairan">Budidaya Perairan</a></li>
+							<li><a href="data.php?fakultas=pertanian&jurusan=Agronomi">Agronomi</a></li>
+							<li><a href="data.php?fakultas=pertanian&jurusan=Proteksi Tanaman">Proteksi Tanaman</a></li>
 						</ul>
 					<?php elseif ($_GET['fakultas'] == "kip"): ?>
 						<ul style="list-style: none;">
@@ -87,6 +88,7 @@
 							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Matematika">Pendidikan Matematika</a></li>
 							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Teknik Mesin">Pendidikan Teknik Mesin</a></li>
 							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Anak Usia Dini">Pendidikan Anak Usia Dini</a></li>
+							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Luar Sekolah">Pendidikan Luar Sekolah</a></li>
 							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Guru Sekolah Dasar">Pendidikan Guru Sekolah Dasar</a></li>
 							<li><a href="data.php?fakultas=kip&jurusan=Bimbingan Konseling">Bimbingan Konseling</a></li>
 							<li><a href="data.php?fakultas=kip&jurusan=Pendidikan Pancasila dan Kewarganegaraan">Pendidikan Pancasila dan Kewarganegaraan</a></li>
@@ -113,7 +115,8 @@
 							<li><a href="data.php?fakultas=ekonomi&jurusan=Manajemen">Manajemen</a></li>
 							<li><a href="data.php?fakultas=ekonomi&jurusan=Akuntansi">Akuntansi</a></li>
 							<li><a href="data.php?fakultas=ekonomi&jurusan=Ekonomi Pembangunan">Ekonomi Pembangunan</a></li>
-							<li><a href="data.php?fakultas=ekonomi&jurusan=Magister Manajemen">Magister Manajemen</a></li>
+							<li><a href="data.php?fakultas=ekonomi&jurusan=D3 Akuntansi">D3 Akuntansi</a></li>
+							<li><a href="data.php?fakultas=ekonomi&jurusan=D3 Kesekretariatan">D3 Kesekretariatan</a></li>
 						</ul>
 					<?php elseif ($_GET['fakultas'] == "hukum"): ?>
 						<ul style="list-style: none">
@@ -123,7 +126,8 @@
 						<ul style="list-style: none">
 							<li><a href="data.php?fakultas=isip&jurusan=Ilmu Komunikasi">Ilmu Komunikasi</a></li>
 							<li><a href="data.php?fakultas=isip&jurusan=Sosiologi">Sosiologi</a></li>
-							<li><a href="data.php?fakultas=isip&jurusan=Administrasi Negara">Administrasi Negara</a></li>
+							<li><a href="data.php?fakultas=isip&jurusan=Ilmu Administrasi Negara">Ilmu Administrasi Negara</a></li>
+							<li><a href="data.php?fakultas=isip&jurusan=Ilmu Hubungan Internasional">Ilmu Hubungan Internasional</a></li>
 						</ul>
 					<?php endif; ?>
 				</center>

@@ -201,6 +201,36 @@
 			$no_hp_ibu = '';
 		}
 
+		if (!empty($_POST['nama_wali'])) {
+			$nama_wali = $_POST['nama_wali'];
+		} else {
+			$nama_wali = '';
+		}
+
+		if (!empty($_POST['alamat_wali'])) {
+			$alamat_wali = $_POST['alamat_wali'];
+		} else {
+			$alamat_wali = '';
+		}
+
+		if (!empty($_POST['pekerjaan_wali'])) {
+			$pekerjaan_wali = $_POST['pekerjaan_wali'];
+		} else {
+			$pekerjaan_wali = '';
+		}
+
+		if (!empty($_POST['penghasilan_wali'])) {
+			$penghasilan_wali = $_POST['penghasilan_wali'];
+		} else {
+			$penghasilan_wali = '';
+		}
+
+		if (!empty($_POST['no_hp_wali'])) {
+			$no_hp_wali = $_POST['no_hp_wali'];
+		} else {
+			$no_hp_wali = '';
+		}
+
 		if (!empty($_POST['anak_ke']) && !empty($_POST['saudara'])) {
 			$anak_ke = array($_POST['anak_ke'], $_POST['saudara']);
 			$anak_ke = implode(',', $anak_ke);
@@ -249,6 +279,31 @@
 		} else {
 			$pin_bb = '';
 		}
+
+		if (!empty($_POST['keagamaan_pernah'])) {
+			$keagamaan_pernah = $_POST['keagamaan_pernah'];
+		} else {
+			$keagamaan_pernah = '';
+		}
+
+		if (!empty($_POST['keagamaan_kapan'])) {
+			$keagamaan_kapan = $_POST['keagamaan_kapan'];
+		} else {
+			$keagamaan_kapan = '';
+		}
+
+		if (!empty($_POST['keagamaan_vakum'])) {
+			$keagamaan_vakum = $_POST['keagamaan_vakum'];
+		} else {
+			$keagamaan_vakum = 0;
+		}
+
+		if (!empty($_POST['keagamaan_kajian'])) {
+			$keagamaan_kajian = $_POST['keagamaan_kajian'];
+		} else {
+			$keagamaan_kajian = '';
+		}
+
 
 		if (isset($_POST['riwayat_pendidikan'])) {
 			$riwayat_pendidikan = $_POST['riwayat_pendidikan'];
@@ -344,8 +399,10 @@
 			header("Location: edit2.php");
 			exit;
 		}
+/* keagamaan_pernah='%s', keagamaan_kapan='%s', keagamaan_vakum='%s', keagamaan_kajian='%s', */
+		$sql = sprintf("UPDATE maba SET nim='%s', password='%s', nama='%s', fakultas='%s', jurusan='%s', ukt='%s', agama='%s', tempat_lahir='%s', tanggal_lahir='%s', alamat_asal='%s', alamat_sekarang='%s', no_hp='%s', facebook='%s', riwayat_pendidikan='%s', tahun_pendidikan='%s', riwayat_prestasi='%s', tahun_prestasi='%s', pemberi_prestasi='%s', isu='%s', asal_daerah='%s', skill='%s', nama_ayah='%s', alamat_ayah='%s', pekerjaan_ayah='%s', penghasilan_ayah='%s', no_hp_ayah='%s', nama_ibu='%s', alamat_ibu='%s', pekerjaan_ibu='%s', penghasilan_ibu='%s', no_hp_ibu='%s', anak_ke='%s', jumlah_tanggungan='%s', email='%s', riwayat_organisasi='%s', tahun_organisasi='%s', jabatan_organisasi='%s', jenis_kelamin='%s', golongan_darah='%s', riwayat_penyakit='%s', hobi='%s', cita_cita='%s', motto='%s', tokoh_idola='%s', bacaan_favorit='%s', blog='%s', kepemilikan_rumah='%s', line='%s', pin_bb='%s', tingkat_prestasi='%s', riwayat_pendidikan_nonformal='%s', tahun_pendidikan_nonformal='%s', nama_wali='%s', alamat_wali='%s', pekerjaan_wali='%s', penghasilan_wali='%s', no_hp_wali='%s', keagamaan_pernah='%s', keagamaan_kapan='%s', keagamaan_vakum='%s', keagamaan_kajian='%s' WHERE nim='%s'", mysqli_real_escape_string($connection, $nim), mysqli_real_escape_string($connection, $password), mysqli_real_escape_string($connection, $nama), mysqli_real_escape_string($connection, $fakultas), mysqli_real_escape_string($connection, $jurusan), mysqli_real_escape_string($connection, $ukt), mysqli_real_escape_string($connection, $agama), mysqli_real_escape_string($connection, $tempat_lahir), mysqli_real_escape_string($connection, $tanggal_lahir), mysqli_real_escape_string($connection, $alamat_asal), mysqli_real_escape_string($connection, $alamat_sekarang), mysqli_real_escape_string($connection, $no_hp), mysqli_real_escape_string($connection, $facebook), mysqli_real_escape_string($connection, $riwayat_pendidikan), mysqli_real_escape_string($connection, $tahun_pendidikan), mysqli_real_escape_string($connection, $riwayat_prestasi), mysqli_real_escape_string($connection, $tahun_prestasi), mysqli_real_escape_string($connection, $pemberi_prestasi), mysqli_real_escape_string($connection, $isu), mysqli_real_escape_string($connection, $asal_daerah), mysqli_real_escape_string($connection, $skill), mysqli_real_escape_string($connection, $nama_ayah), mysqli_real_escape_string($connection, $alamat_ayah), mysqli_real_escape_string($connection, $pekerjaan_ayah), mysqli_real_escape_string($connection, $penghasilan_ayah), mysqli_real_escape_string($connection, $no_hp_ayah), mysqli_real_escape_string($connection, $nama_ibu), mysqli_real_escape_string($connection, $alamat_ibu), mysqli_real_escape_string($connection, $pekerjaan_ibu), mysqli_real_escape_string($connection, $penghasilan_ibu), mysqli_real_escape_string($connection, $no_hp_ibu), mysqli_real_escape_string($connection, $anak_ke), mysqli_real_escape_string($connection, $jumlah_tanggungan), mysqli_real_escape_string($connection, $email), mysqli_real_escape_string($connection, $riwayat_organisasi), mysqli_real_escape_string($connection, $tahun_organisasi), mysqli_real_escape_string($connection, $jabatan_organisasi), mysqli_real_escape_string($connection, $jenis_kelamin), mysqli_real_escape_string($connection, $golongan_darah), mysqli_real_escape_string($connection, $riwayat_penyakit), mysqli_real_escape_string($connection, $hobi), mysqli_real_escape_string($connection, $cita_cita), mysqli_real_escape_string($connection, $motto), mysqli_real_escape_string($connection, $tokoh_idola), mysqli_real_escape_string($connection, $bacaan_favorit), mysqli_real_escape_string($connection, $blog), mysqli_real_escape_string($connection, $kepemilikan_rumah), mysqli_real_escape_string($connection, $line), mysqli_real_escape_string($connection, $pin_bb), mysqli_real_escape_string($connection, $tingkat_prestasi), mysqli_real_escape_string($connection, $riwayat_pendidikan_nonformal), mysqli_real_escape_string($connection, $tahun_pendidikan_nonformal), mysqli_real_escape_string($connection, $nama_wali), mysqli_real_escape_string($connection, $alamat_wali), mysqli_real_escape_string($connection, $pekerjaan_wali), mysqli_real_escape_string($connection, $penghasilan_wali), mysqli_real_escape_string($connection, $no_hp_wali), mysqli_real_escape_string($connection, $keagamaan_pernah), mysqli_real_escape_string($connection, $keagamaan_kapan), mysqli_real_escape_string($connection, $keagamaan_vakum), mysqli_real_escape_string($connection, $keagamaan_kajian), mysqli_real_escape_string($connection, $_SESSION['nim']));
+		/* mysqli_real_escape_string($connection, $keagamaan_pernah), mysqli_real_escape_string($connection, $keagamaan_kapan), mysqli_real_escape_string($connection, $keagamaan_vakum), mysqli_real_escape_string($connection, $keagamaan_kajian), */
 
-		$sql = sprintf("UPDATE maba SET nim='%s', password='%s', nama='%s', fakultas='%s', jurusan='%s', ukt='%s', agama='%s', tempat_lahir='%s', tanggal_lahir='%s', alamat_asal='%s', alamat_sekarang='%s', no_hp='%s', facebook='%s', riwayat_pendidikan='%s', tahun_pendidikan='%s', riwayat_prestasi='%s', tahun_prestasi='%s', pemberi_prestasi='%s', isu='%s', asal_daerah='%s', skill='%s', nama_ayah='%s', alamat_ayah='%s', pekerjaan_ayah='%s', penghasilan_ayah='%s', no_hp_ayah='%s', nama_ibu='%s', alamat_ibu='%s', pekerjaan_ibu='%s', penghasilan_ibu='%s', no_hp_ibu='%s', anak_ke='%s', jumlah_tanggungan='%s', email='%s', riwayat_organisasi='%s', tahun_organisasi='%s', jabatan_organisasi='%s', jenis_kelamin='%s', golongan_darah='%s', riwayat_penyakit='%s', hobi='%s', cita_cita='%s', motto='%s', tokoh_idola='%s', bacaan_favorit='%s', blog='%s', kepemilikan_rumah='%s', line='%s', pin_bb='%s', tingkat_prestasi='%s', riwayat_pendidikan_nonformal='%s', tahun_pendidikan_nonformal='%s' WHERE nim='%s'", mysqli_real_escape_string($connection, $nim), mysqli_real_escape_string($connection, $password), mysqli_real_escape_string($connection, $nama), mysqli_real_escape_string($connection, $fakultas), mysqli_real_escape_string($connection, $jurusan), mysqli_real_escape_string($connection, $ukt), mysqli_real_escape_string($connection, $agama), mysqli_real_escape_string($connection, $tempat_lahir), mysqli_real_escape_string($connection, $tanggal_lahir), mysqli_real_escape_string($connection, $alamat_asal), mysqli_real_escape_string($connection, $alamat_sekarang), mysqli_real_escape_string($connection, $no_hp), mysqli_real_escape_string($connection, $facebook), mysqli_real_escape_string($connection, $riwayat_pendidikan), mysqli_real_escape_string($connection, $tahun_pendidikan), mysqli_real_escape_string($connection, $riwayat_prestasi), mysqli_real_escape_string($connection, $tahun_prestasi), mysqli_real_escape_string($connection, $pemberi_prestasi), mysqli_real_escape_string($connection, $isu), mysqli_real_escape_string($connection, $asal_daerah), mysqli_real_escape_string($connection, $skill), mysqli_real_escape_string($connection, $nama_ayah), mysqli_real_escape_string($connection, $alamat_ayah), mysqli_real_escape_string($connection, $pekerjaan_ayah), mysqli_real_escape_string($connection, $penghasilan_ayah), mysqli_real_escape_string($connection, $no_hp_ayah), mysqli_real_escape_string($connection, $nama_ibu), mysqli_real_escape_string($connection, $alamat_ibu), mysqli_real_escape_string($connection, $pekerjaan_ibu), mysqli_real_escape_string($connection, $penghasilan_ibu), mysqli_real_escape_string($connection, $no_hp_ibu), mysqli_real_escape_string($connection, $anak_ke), mysqli_real_escape_string($connection, $jumlah_tanggungan), mysqli_real_escape_string($connection, $email), mysqli_real_escape_string($connection, $riwayat_organisasi), mysqli_real_escape_string($connection, $tahun_organisasi), mysqli_real_escape_string($connection, $jabatan_organisasi), mysqli_real_escape_string($connection, $jenis_kelamin), mysqli_real_escape_string($connection, $golongan_darah), mysqli_real_escape_string($connection, $riwayat_penyakit), mysqli_real_escape_string($connection, $hobi), mysqli_real_escape_string($connection, $cita_cita), mysqli_real_escape_string($connection, $motto), mysqli_real_escape_string($connection, $tokoh_idola), mysqli_real_escape_string($connection, $bacaan_favorit), mysqli_real_escape_string($connection, $blog), mysqli_real_escape_string($connection, $kepemilikan_rumah), mysqli_real_escape_string($connection, $line), mysqli_real_escape_string($connection, $pin_bb), mysqli_real_escape_string($connection, $tingkat_prestasi), mysqli_real_escape_string($connection, $riwayat_pendidikan_nonformal), mysqli_real_escape_string($connection, $tahun_pendidikan_nonformal), mysqli_real_escape_string($connection, $_SESSION['nim']));
 		mysqli_query($connection, $sql) or die(mysql_error());
 
 		$_SESSION['status'] = "Success";

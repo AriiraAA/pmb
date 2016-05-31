@@ -40,6 +40,11 @@
 			$pekerjaan_ibu			= $row['pekerjaan_ibu'];
 			$penghasilan_ibu		= $row['penghasilan_ibu'];
 			$no_hp_ibu				= $row['no_hp_ibu'];
+			$nama_wali				= $row['nama_wali'];
+			$alamat_wali			= $row['alamat_wali'];
+			$pekerjaan_wali			= $row['pekerjaan_wali'];
+			$penghasilan_wali		= $row['penghasilan_wali'];
+			$no_hp_wali				= $row['no_hp_wali'];
 			$jumlah_tanggungan 		= $row['jumlah_tanggungan'];
 			$kepemilikan_rumah		= $row['kepemilikan_rumah'];
 			$no_hp					= $row['no_hp'];
@@ -49,6 +54,10 @@
 			$pin_bb					= $row['pin_bb'];
 			$blog 					= $row['blog'];
 			$isu 					= $row['isu'];
+			$keagamaan_pernah		= $row['keagamaan_pernah'];
+			$keagamaan_kapan		= $row['keagamaan_kapan'];
+			$keagamaan_vakum		= $row['keagamaan_vakum'];
+			$keagamaan_kajian		= $row['keagamaan_kajian'];
 			$anak_ke 							= explode(',', $row['anak_ke']);
 			$riwayat_pendidikan					= explode(',', $row['riwayat_pendidikan']);
 			$tahun_pendidikan					= explode(',', $row['tahun_pendidikan']);
@@ -178,24 +187,24 @@
 				  <div class="panel-body">
 				    <div class="panel panel-info">
 					  <div class="panel-heading">
-					    <h3 class="panel-title">Data Ayah / Wali</h3>
+					    <h3 class="panel-title">Data Ayah</h3>
 					  </div>
 					  <div class="panel-body">
 					    <table class="table">
 					    	<tr>
-					    		<td><b>Nama Ayah / Wali</b></td>
+					    		<td><b>Nama Ayah</b></td>
 					    		<td><?= $nama_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Alamat Ayah / Wali</b></td>
+					    		<td><b>Alamat Ayah</b></td>
 					    		<td><?= $alamat_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Pekerjaan Ayah / Wali</b></td>
+					    		<td><b>Pekerjaan Ayah</b></td>
 					    		<td><?= $pekerjaan_ayah ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Penghasilan Ayah / Wali</b></td>
+					    		<td><b>Penghasilan Ayah</b></td>
 					    		<td><?= 'Rp. ' . number_format( $penghasilan_ayah, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
@@ -207,29 +216,58 @@
 					</div>
 					<div class="panel panel-info">
 					  <div class="panel-heading">
-					    <h3 class="panel-title">Data Ibu / Wali</h3>
+					    <h3 class="panel-title">Data Ibu</h3>
 					  </div>
 					  <div class="panel-body">
 					    <table class="table">
 					    	<tr>
-					    		<td><b>Nama Ibu / Wali</b></td>
+					    		<td><b>Nama Ibu</b></td>
 					    		<td><?= $nama_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Alamat Ibu / Wali</b></td>
+					    		<td><b>Alamat Ibu</b></td>
 					    		<td><?= $alamat_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Pekerjaan Ibu / Wali</b></td>
+					    		<td><b>Pekerjaan Ibu</b></td>
 					    		<td><?= $pekerjaan_ibu ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>Penghasilan Ibu / Wali</b></td>
+					    		<td><b>Penghasilan Ibu</b></td>
 					    		<td><?= 'Rp. ' . number_format($penghasilan_ibu, 0 , '' , '.' ) . ',-' ?></td>
 					    	</tr>
 					    	<tr>
-					    		<td><b>No HP Ibu / Wali</b></td>
+					    		<td><b>No HP Ibu</b></td>
 					    		<td><?= $no_hp_ibu ?></td>
+					    	</tr>
+					    </table>
+					  </div>
+					</div>
+					<div class="panel panel-info">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Data Wali</h3>
+					  </div>
+					  <div class="panel-body">
+					    <table class="table">
+					    	<tr>
+					    		<td><b>Nama Wali</b></td>
+					    		<td><?= $nama_wali ?></td>
+					    	</tr>
+					    	<tr>
+					    		<td><b>Alamat Wali</b></td>
+					    		<td><?= $alamat_wali ?></td>
+					    	</tr>
+					    	<tr>
+					    		<td><b>Pekerjaan Wali</b></td>
+					    		<td><?= $pekerjaan_wali ?></td>
+					    	</tr>
+					    	<tr>
+					    		<td><b>Penghasilan Wali</b></td>
+					    		<td><?= 'Rp. ' . number_format($penghasilan_wali, 0 , '' , '.' ) . ',-' ?></td>
+					    	</tr>
+					    	<tr>
+					    		<td><b>No HP Wali</b></td>
+					    		<td><?= $no_hp_wali ?></td>
 					    	</tr>
 					    </table>
 					  </div>
@@ -372,6 +410,35 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><i class="fa fa-institution"></i> Riwayat Keagamaan</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<table class="table">
+				  		<tbody>
+				  			<tr>
+				  				<td><b>Sudah pernah ikut kajian keislaman di sekolah?</b></td>
+				  				<td><?= $keagamaan_pernah ?></td>
+				  			</tr>
+				  			<tr>
+				  				<td><b>Dimulai sejak kapan?</b></td>
+				  				<td><?= $keagamaan_kapan ?></td>
+				  			</tr>
+				  			<tr>
+				  				<td><b>Pernah vakum berapa lama?</b></td>
+				  				<td><?= $keagamaan_vakum ?></td>
+				  			</tr>
+				  			<tr>
+				  				<td><b>Frekuensi kajian yang diikuti?</b></td>
+				  				<td><?= $keagamaan_kajian ?></td>
+				  			</tr>
+				  		</tbody>
+				  	</table>
+				  </div>
+				</div>	
+			</div>
 			<div class="col-md-6">
 				<div class="panel panel-primary">
 				  <div class="panel-heading">
